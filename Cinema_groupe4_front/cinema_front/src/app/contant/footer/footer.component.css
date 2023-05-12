@@ -1,0 +1,41 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+#footercontainer{
+  position: fixed;
+  margin-bottom: 0;
+  border-top: #e8491d 3px solid;
+  bottom: 0;
+  width: 100%;
+}
+.footer{
+    display: flex;
+}
+.contact{
+    width: 30%;
+    height: 100%;
+}
+.contact ul{
+    list-style-type: none;
+}
+.remerciment{
+    width: 40%;
+    margin-top: 35px;
+}
+.navigation{
+    width: 30%;
+
+}
+.navigation ul{
+    list-style-type: none;
+}

@@ -1,0 +1,58 @@
+.container-objet{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 400px;
+      color: white;
+      position: relative;
+      background-color: black;
+}
+.container-text-film-semaine{
+      width: 50%;
+      margin-left: 0;
+}
+.container-slide{
+      margin-left: 10%;
+      height: 100%;
+      width: 80%;
+      text-align: center;
+      display: flex;
+}
+.container-slide .container-affiche{
+      width: 17%;
+      height: 100%;
+      background-color: black;
+      padding : 10px;
+      border-radius: 10px;
+
+}
+.container-affiche{
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 2%;
+}
+.container-top{
+      height: 50%;
+      width: 100%;
+      text-align: center;
+      background-image: url("src/assets/images/django.jpg");
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px 10px 0 0;
+      background-color: antiquewhite;
+}
+.container-bot{
+      height: 50%;
+      width: 100%;
+      text-align: center;
+      background-color: rgb(33, 33, 33);
+      border-radius: 0 0 10px 10px;
+}
+button{
+      border-radius: 15px;
+      background-color: rgb(88, 87, 87);
+      color: white;
+}
