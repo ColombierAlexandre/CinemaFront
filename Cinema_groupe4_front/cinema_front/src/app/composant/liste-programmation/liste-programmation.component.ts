@@ -28,7 +28,7 @@ export class ListeProgrammationComponent implements OnInit{
   }
 
   getAllPlaces(){
-    this.placeService.getAllPlace().subscribe({
+    this.placeService.getAllPlaceBo().subscribe({
       next : (dataPlace)=>{this.places = dataPlace},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}
@@ -36,7 +36,7 @@ export class ListeProgrammationComponent implements OnInit{
   }
 
   getAllSalles(){
-    this.salleService.getAllSalle().subscribe({
+    this.salleService.getAllSalleBo().subscribe({
       next : (dataSalle)=>{this.salles = dataSalle},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}
@@ -44,7 +44,7 @@ export class ListeProgrammationComponent implements OnInit{
   }
 
   getAllCinemas(){
-    this.cinemaService.getAllCinema().subscribe({
+    this.cinemaService.getAllCinemaBo().subscribe({
       next : (dataCinema)=>{this.cinemas = dataCinema},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}

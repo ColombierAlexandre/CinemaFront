@@ -10,7 +10,7 @@ export class FilmService {
 
   film : Film | any;
 
-  private _url : string = 'http://localhost:9091/film_api';
+  private _url : string = 'http://localhost:9091/filmBo_api';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -22,12 +22,8 @@ export class FilmService {
     return this.httpClient.get<Film>(this._url + "/titre/" + name);
   }
 
-  getAllFilm() : Observable<Film[]> {
+  getAllFilmBo() : Observable<Film[]> {
     return this.httpClient.get<Film[]>(this._url);
-  }
-
-  getFilmByProg(id : number) : Observable<Film>{
-    return this.httpClient.get<Film>(this._url);
   }
   
 

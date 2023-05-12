@@ -19,7 +19,7 @@ export class FormulaireConnexionComponent implements OnInit{
   }
 
   getAllUtilisateurs(){
-    this.utilisateurService.getAllUtilisateurs().subscribe({
+    this.utilisateurService.getAllUtilisateursBo().subscribe({
       next : (dataUtilisateurs)=>{this.utilisateurs = dataUtilisateurs},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}

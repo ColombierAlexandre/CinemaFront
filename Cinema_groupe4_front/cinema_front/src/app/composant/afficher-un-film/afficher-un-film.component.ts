@@ -12,6 +12,7 @@ export class AfficherUnFilmComponent implements OnInit{
 
   films : Film[] =[];
 
+
   constructor(private filmService : FilmService, private router : Router){}
 
   ngOnInit() : void {
@@ -19,12 +20,25 @@ export class AfficherUnFilmComponent implements OnInit{
   }
 
   getListeFilm(){
-    this.filmService.getAllFilm().subscribe({
+    this.filmService.getAllFilmBo().subscribe({
       next : (dataFilm)=>{this.films = dataFilm},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}
     })
+
+    // division euclidienne :
+    const filmsLenfth : number = Math.floor(this.films.length/3);
+    const resteFilms : number = this.films.length%3;
+
+    // for(let i= 0; i < filmsLenfth; i++){
+    //   filmListe : Film[] = [];
+      
+    // }((film : Film) => {
+        
+    // });
   }
+
+  
 
   afficherUnFilm(film : Film){
     this.filmService.film = film;

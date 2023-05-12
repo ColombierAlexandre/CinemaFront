@@ -10,11 +10,11 @@ import { Film } from '../model/film';
 })
 export class ProgrammationService {
 
-  private _url : string = 'http://localhost:9091/programmation_api';
+  private _url : string = 'http://localhost:9091/programmationBo_api';
 
   constructor(private httpClient : HttpClient) { }
 
-  getProgrammationById(idProg : number) : Observable<Programmation> {
+  getProgrammationBoById(idProg : number) : Observable<Programmation> {
     return this.httpClient.get<Programmation>(this._url + "/" + idProg);
   }
 
@@ -22,8 +22,4 @@ export class ProgrammationService {
     return this.httpClient.get<Programmation[]>(this._url + "/" + film);
   }
 
-  getAllProg() : Observable<Programmation[]>{
-    return this.httpClient.get<Programmation[]>(this._url);
-
-  }
 }

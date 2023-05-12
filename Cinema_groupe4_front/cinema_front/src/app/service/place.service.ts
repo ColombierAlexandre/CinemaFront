@@ -8,19 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class PlaceService {
 
-  private _url : string = 'http://localhost:9091/place_api';
+  private _url : string = 'http://localhost:9091/placeBo_api';
 
   constructor(private httpClient : HttpClient) { }
   
-  getPlaceById(id : number) : Observable<Place>{
+  getPlaceBoById(id : number) : Observable<Place>{
     return this.httpClient.get<Place>(this._url + "/" + id);
   }
 
-  getAllPlace() : Observable<Place[]>{
+  getAllPlaceBo() : Observable<Place[]>{
     return this.httpClient.get<Place[]>(this._url);
   }
 
-  getAllPlaceByProgrammation(idProg : number) : Observable<Place[]>{
+  getAllPlaceBoByProgrammation(idProg : number) : Observable<Place[]>{
     return this.httpClient.get<Place[]>(this._url + "/allProg/" + idProg);
   }
   

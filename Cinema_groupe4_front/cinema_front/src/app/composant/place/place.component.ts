@@ -21,15 +21,9 @@ export class PlaceComponent implements OnInit{
   constructor(private placeService : PlaceService, private programmationService : ProgrammationService, private salleService : SalleService, private filmService : FilmService, private router : Router){}
   
   ngOnInit(): void {
-    this.getAllProg
+    
   }
   
-  getAllProg(){
-    this.programmationService.getAllProg().subscribe({
-      next : (dataProgrammation)=>{this.programmations = dataProgrammation},
-      error : (erreur)=>{console.log(erreur)},
-      complete : ()=>{}
-  })
-  }
+  
 
 }

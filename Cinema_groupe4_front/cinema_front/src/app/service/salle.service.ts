@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class SalleService {
 
-  private _url : string = 'http://localhost:9091/salle_api';
+  private _url : string = 'http://localhost:9091/salleBo_api';
 
   constructor(private httpClient : HttpClient) { }
 
-  getSalleById(idSalle : number) : Observable<Salle> {
+  getSalleBoById(idSalle : number) : Observable<Salle> {
     return this.httpClient.get<Salle>(this._url + "/" + idSalle);
   }
-  getAllSalle() : Observable<Salle[]> {
+  getAllSalleBo() : Observable<Salle[]> {
     return this.httpClient.get<Salle[]>(this._url);
   }
   
