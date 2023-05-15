@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Numero</th>
+            <th>Reservation</th>
+            <th>Action</th>
+        </tr>
+       
+    </thead>
+    <tbody>
+        <tr *ngFor="let place of places">
+            <td>{{place.idPlace}}</td>
+            <td>{{place.numPlace}}</td>
+            <td>{{place.isUsed}}</td>
+            <td>
+                <button  (click)="AllerVersTicket(place)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

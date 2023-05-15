@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let progra of prog">
+            <td>{{progra.idProg}}</td>
+            <td>{{progra.dateHeureProg}}</td>
+            <td>{{progra.film | json}}</td>
+            <td>{{progra.salle | json}}</td>
+            <td>
+                
+                    <button  (click)="AllerVersReservation(progra)"></button>
+               
+            </td>
+        </tr>
+    </tbody>
+</table>
