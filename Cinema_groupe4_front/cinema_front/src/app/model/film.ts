@@ -1,13 +1,14 @@
+import { Programmation } from "./programmation";
+
 export class Film{
     private _visaExploitation : number;
     private _titre : string;
-    private _synopsis : string;
     private _duree : Date;
     private _realisateur : string;
     private _producteur : string;
     private _acteur : string[];
     private _carcteristique : string[];
-    private _afficheUrl : string;
+    private _programmations : Programmation[];
 
     get visaExploitation() : number {
         return this._visaExploitation;
@@ -23,14 +24,6 @@ export class Film{
 
     set titre(value : string) {
         this._titre = value;
-    }
-
-    get synopsis() : string {
-        return this._synopsis;
-    }
-
-    set synopsis(value : string) {
-        this._synopsis = value;
     }
 
     get duree() : Date {
@@ -73,24 +66,24 @@ export class Film{
         this._carcteristique = value;
     }
 
-    get afficheUrl() : string {
-        return this._afficheUrl;
+    get programmations() : Programmation[]{
+        return this._programmations;
     }
 
-    set afficheUrl(value : string) {
-        this._afficheUrl = value;
+    set programmations(value : Programmation[]) {
+        this._programmations = value;
     }
 
-    constructor(visaExploitation : number, titre : string, synopsis : string, duree : Date, realisateur : string, producteur : string, acteur : string[], carcteristique : string[], afficheUrl : string){
+    constructor(visaExploitation : number, titre : string, duree : Date, realisateur : string, 
+        producteur : string, acteur : string[], carcteristique : string[], programmations : Programmation[]){
         this._visaExploitation = visaExploitation;
         this._titre = titre;
-        this._synopsis = synopsis
         this._duree = duree;
         this._realisateur = realisateur;
         this._producteur = producteur;
         this._acteur = acteur;
         this._carcteristique = carcteristique;
-        this._afficheUrl = afficheUrl;
+        this._programmations = programmations;
     }
 
 }

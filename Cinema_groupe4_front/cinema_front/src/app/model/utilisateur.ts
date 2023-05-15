@@ -99,7 +99,9 @@ export class Utilisateur{
         this._dateNaissance = value;
     }
 
-    constructor( id : number, email : string, motDePasse : string, nom : string, prenom : string, ville : string, numeroEtRue : string, codePostal : number, numeroCB : number, criptogramme : number, dateNaissance : Date){
+    constructor( id : number, email : string, motDePasse : string, nom : string, prenom : string, 
+        ville : string, numeroEtRue : string, codePostal : number, numeroCB : number, 
+        criptogramme : number, dateNaissance : Date){
         this._id = id;
         this._email = email;
         this._motDePasse = motDePasse;
