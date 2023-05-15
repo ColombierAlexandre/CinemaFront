@@ -1,29 +1,27 @@
-import { Film } from "./film";
-import { Place } from "./place";
-import { Salle } from "./salle";
+import {Film} from "./film"
+import {Salle} from "./salle"
+
+
 
 export class Programmation{
-
     private _idProgrammation : number;
-	private _dateHeureProg : Date;
-	private _film : Film;
-	private _salle : Salle;
-	private _listePlaces :Place[];
+    private _dateHeureProgrammation : Date;
+    private _film : Film;
+    private _salle : Salle;
 
-    get idProgrammation() : number {
+    get idProg() : number {
         return this._idProgrammation;
     }
 
-    set idProgrammation(value : number) {
+    set idProg(value : number) {
         this._idProgrammation = value;
     }
-
     get dateHeureProg() : Date {
-        return this._dateHeureProg;
+        return this._dateHeureProgrammation;
     }
 
     set dateHeureProg(value : Date) {
-        this._dateHeureProg = value;
+        this._dateHeureProgrammation = value;
     }
 
     get film() : Film {
@@ -42,19 +40,10 @@ export class Programmation{
         this._salle = value;
     }
 
-    get listePlaces() : Place[] {
-        return this._listePlaces;
-    }
-
-    set listePlaces(value : Place[]) {
-        this._listePlaces = value;
-    }
-
-    constructor(idProgrammation : number, dateHeureProg : Date, film : Film, salle : Salle, listePlaces :Place[]){
+    constructor(idProgrammation : number, dateHeureProgrammation : Date, film : Film, salle : Salle){
         this._idProgrammation = idProgrammation;
-        this._dateHeureProg = dateHeureProg;
+        this._dateHeureProgrammation = dateHeureProgrammation;
         this._film = film;
         this._salle = salle;
-        this._listePlaces = listePlaces;
     }
 }

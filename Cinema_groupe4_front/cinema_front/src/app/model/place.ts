@@ -1,16 +1,10 @@
-export class Place{
+import { Programmation } from "./programmation";
 
+export class Place{
     private _idPlace : number;
     private _numPlace : number;
     private _isUsed : boolean;
-
-    get idPlace() : number {
-        return this._idPlace;
-    }
-
-    set idPlace(value : number) {
-        this._idPlace = value;
-    }
+    private _programmationId : number;
 
     get numPlace() : number {
         return this._numPlace;
@@ -27,9 +21,27 @@ export class Place{
         this._isUsed = value;
     }
 
-    constructor(idPlace : number, numPlace : number, isUsed : boolean){
-        this._idPlace = idPlace;
+    get idPlace() : number {
+        return this._idPlace;
+    }
+
+    set idPlace(value : number) {
+        this._idPlace = value;
+    }
+
+    get programmationId() : number {
+        return this._programmationId;
+    }
+
+    set programmationId(value : number) {
+        this._programmationId = value;
+    }
+
+
+    constructor(numPlace : number, isUsed : boolean, idPlace : number, programmationId : number){
         this._numPlace = numPlace;
         this._isUsed = isUsed;
+        this._idPlace = idPlace;
+        this._programmationId = programmationId;
     }
 }

@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Programmation } from '../model/programmation';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Film } from '../model/film';
-
+import { Programmation } from '../model/programmation';
+import { Film} from '../model/film';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProgrammationService {
 
-  private _url : string = 'http://localhost:9091/programmationBo_api';
+  private prog : ProgrammationService | undefined;
 
-  constructor(private httpClient : HttpClient) { }
+  private _url : string = 'http://localhost:9091/programmation';
 
-  getProgrammationBoById(idProg : number) : Observable<Programmation> {
-    return this.httpClient.get<Programmation>(this._url + "/" + idProg);
+  constructor(private httpClient : HttpClient, private router : Router) { }
+
+  getAllProg():Observable<Programmation[]>{
+    return this.httpClient.get<[Programmation]>(this._url);
   }
 
-  getAllProgrammationByFilm(film : Film) : Observable<Programmation[]> {
-    return this.httpClient.get<Programmation[]>(this._url + "/" + film);
+  getProgByFilm(filmId : number) : Observable<Programmation[]>{
+    return this.httpClient.get<[Programmation]>(this._url + "/ByFilm/" + filmId);
   }
 
 }
