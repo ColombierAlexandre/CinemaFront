@@ -12,7 +12,7 @@ export class ProgrammationService {
 
   private prog : ProgrammationService | undefined;
 
-  private _url : string = 'http://localhost:9091/programmation';
+  private _url : string = 'http://localhost:9091/programmationBo_api';
 
   constructor(private httpClient : HttpClient, private router : Router) { }
 

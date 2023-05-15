@@ -1,5 +1,6 @@
 import {Film} from "./film"
 import {Salle} from "./salle"
+import { Place } from "./place";
 
 
 
@@ -8,6 +9,14 @@ export class Programmation{
     private _dateHeureProgrammation : Date;
     private _film : Film;
     private _salle : Salle;
+    private _places : Place[];
+
+    get places() : Place[] {
+        return this._places;
+    }
+
+    set places(value : Place[]) {
+    }
 
     get idProg() : number {
         return this._idProgrammation;
@@ -40,10 +49,11 @@ export class Programmation{
         this._salle = value;
     }
 
-    constructor(idProgrammation : number, dateHeureProgrammation : Date, film : Film, salle : Salle){
+    constructor(idProgrammation : number, dateHeureProgrammation : Date, film : Film, salle : Salle, places : Place[]){
         this._idProgrammation = idProgrammation;
         this._dateHeureProgrammation = dateHeureProgrammation;
         this._film = film;
         this._salle = salle;
+        this._places = places;
     }
 }
