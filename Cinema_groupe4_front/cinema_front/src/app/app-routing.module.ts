@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"acceul", component : AfficherUnFilmComponent},
   {path:"listeFilms",component:ListeFilmComponent},
   {path:"validerTicket",component:ValiderTicketComponent},
-  {path:"ticket",component:ValiderTicketComponent}
+  {path:"ticket",component:ValiderTicketComponent},
   {path:"places",component:PlaceComponent},
   
   {path : "ticket", redirectTo: '/validerTicket'},

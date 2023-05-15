@@ -22,7 +22,7 @@ export class ListeFilmComponent {
   }
 
   getListeFilms(){
-    this.filmService.getAllFilm().subscribe({
+    this.filmService.getAllFilmBo().subscribe({
       next : (filmsData) => {this.films = filmsData},
       error : (erreur) => {console.log(erreur)},
       complete : () => {}
