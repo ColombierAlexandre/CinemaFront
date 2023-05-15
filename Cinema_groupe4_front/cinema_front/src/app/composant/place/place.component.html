@@ -1,10 +1,21 @@
-<div *ngFor="let prog of programmations">
-    <ul >
-        <li>{{prog.idProgrammation}}</li>
-        <li>{{prog.dateHeureProg}}</li>
-        <li>{{prog.film}}</li>
-        <li>{{prog.salle}}</li>
-        <li>{{prog.listePlaces}}</li>
-        <hr>
-    </ul>
-</div>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Numero</th>
+            <th>Reservation</th>
+            <th>Action</th>
+        </tr>
+       
+    </thead>
+    <tbody>
+        <tr *ngFor="let place of places">
+            <td>{{place.idPlace}}</td>
+            <td>{{place.numPlace}}</td>
+            <td>{{place.isUsed}}</td>
+            <td>
+                <button  (click)="AllerVersTicket(place)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
