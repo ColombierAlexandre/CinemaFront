@@ -1,1 +1,100 @@
-<p>valider-ticket works!</p>
+<div class="formcontainer">
+    <div class="container-formulaire">
+
+    <form class="form-commande">
+
+        <div class="logo_cinema"><img [src]="logo" width="80" height="80" 
+            class="d-inline-block align-text-top">
+        </div>
+        <br>
+
+        <div class="container-confirmation_commande">
+
+            <legend>Informations de la commande</legend>
+            <div class="mb-3 row">
+                <label for="staticTitle" class="col-sm-2 col-form-label">Titre du film</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticTitle" value="Mario">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="staticSalle" class="col-sm-2 col-form-label">Salle</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticSalle" value="A-03">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="staticHeure" class="col-sm-2 col-form-label">Heure</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticHeure" value="19h30">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="staticCinema" class="col-sm-2 col-form-label">Cinéma</label>
+                <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext" id="staticCinema" value="Cinéma-Wilson">
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="container-information_personnelles">
+
+            <legend>Informations personnelles</legend>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="Jean">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="Dupont">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">adresse mail</label>
+                <input type="email" class="form-control" id="FormControlInput1" placeholder="jean.dupont@example.com">
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="container-adresse">
+
+            <legend>Adresse de facturation</legend>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Adresse</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="13 faculté de pharmacie">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Code postal</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="31000">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Ville</label>
+                <input type="text" class="form-control" id="leFormControlInput1" placeholder="Toulouse">
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="container-payment">
+
+            <legend>Information de payment</legend>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Nom sur la carte</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="Jean Dupont">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Numero de carte</label>
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="mb-3">
+                <label for="FormControlInput1" class="form-label">Cryptogramme </label>
+                <input type="text" class="form-control" id="leFormControlInput1" placeholder="000">
+            </div>
+        </div>
+
+
+    </form>
+</div>
+</div>
