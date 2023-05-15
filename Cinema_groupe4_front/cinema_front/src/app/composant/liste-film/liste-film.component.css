@@ -67,9 +67,16 @@ body{
     height: 50%;
     width: 100%;
     text-align: center;
-    background-image: url("src/assets/images/Mario_movie.avif");
+    /* background-image: url("src/assets/images/Mario_movie.avif"); */
+    background-color: blanchedalmond;
     background-position: center;
     background-size: cover;
+    border-radius: 7px 7px 0 0;
+}
+
+#affiche_film{
+    width: 100%;
+    height: 100%;
     border-radius: 7px 7px 0 0;
 }
 
