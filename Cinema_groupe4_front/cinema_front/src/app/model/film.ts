@@ -3,6 +3,7 @@ import { Programmation } from "./programmation";
 export class Film{
     private _visaExploitation : number;
     private _titre : string;
+    private _urlImage : string;
     private _duree : Date;
     private _realisateur : string;
     private _producteur : string;
@@ -24,6 +25,14 @@ export class Film{
 
     set titre(value : string) {
         this._titre = value;
+    }
+
+    get urlImage() : string {
+        return this._urlImage;
+    }
+
+    set urlImage(value : string) {
+        this._urlImage = value;
     }
 
     get duree() : Date {
@@ -74,10 +83,11 @@ export class Film{
         this._programmations = value;
     }
 
-    constructor(visaExploitation : number, titre : string, duree : Date, realisateur : string, 
+    constructor(visaExploitation : number, titre : string, urlImage : string, duree : Date, realisateur : string, 
         producteur : string, acteur : string[], carcteristique : string[], programmations : Programmation[]){
         this._visaExploitation = visaExploitation;
         this._titre = titre;
+        this._urlImage = urlImage;
         this._duree = duree;
         this._realisateur = realisateur;
         this._producteur = producteur;

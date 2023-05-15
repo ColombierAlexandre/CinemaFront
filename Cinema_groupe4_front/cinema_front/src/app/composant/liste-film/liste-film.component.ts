@@ -17,6 +17,7 @@ export class ListeFilmComponent {
   films_a_voir_prochainement : Film[] = []
 
   ngOnInit() : void {
+    this.getListeFilms()
     this.get_liste_films_a_l_affiche()
     this.get_liste_films_a_voir_prochainement()
   }
