@@ -19,7 +19,7 @@ export class AfficherCinemaComponent implements OnInit{
   }
 
   getAllCinema(){
-    this.cinemaService.getAllCinema().subscribe({
+    this.cinemaService.getAllCinemaBo().subscribe({
       next : (dataCinema)=>{this.cinemas = dataCinema},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{}

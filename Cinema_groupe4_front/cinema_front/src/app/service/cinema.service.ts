@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CinemaService {
 
-  private _url : string = 'http://localhost:9091/cinema_api';
+  private _url : string = 'http://localhost:9091/cinemaBo_api';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -20,9 +20,10 @@ export class CinemaService {
     return this.httpClient.get<Cinema>(this._url + "/" + name);
   }
 
-  getAllCinema() : Observable<Cinema[]> {
+  getAllCinemaBo() : Observable<Cinema[]> {
     return this.httpClient.get<Cinema[]>(this._url);
   }
+  
   getAllCinemaBoByVille(ville : string) : Observable<Cinema[]> {
     return this.httpClient.get<Cinema[]>(this._url + "/allCineBoVille/" + ville);
   }

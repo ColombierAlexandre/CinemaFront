@@ -4,16 +4,21 @@ import { AfficherUnFilmComponent } from './composant/afficher-un-film/afficher-u
 import { CarouselComponent } from './composant/carousel/carousel.component';
 import { AfficherCinemaComponent } from './composant/afficher-cinema/afficher-cinema.component';
 import { ListeFilmComponent } from './composant/liste-film/liste-film.component';
+import { PlaceComponent } from './composant/place/place.component';
 import { ValiderTicketComponent } from './composant/valider-ticket/valider-ticket.component';
 
 const routes: Routes = [
-  {path : "acceul", component : AfficherUnFilmComponent},
-  {path : "cinemas", component : AfficherCinemaComponent},
+  {path:"acceul", component : AfficherUnFilmComponent},
   {path:"listeFilms",component:ListeFilmComponent},
   {path:"validerTicket",component:ValiderTicketComponent},
+  {path:"ticket",component:ValiderTicketComponent}
+  {path:"places",component:PlaceComponent},
   
+  {path : "ticket", redirectTo: '/validerTicket'},
+  {path : "cinemas", redirectTo: '/acceul'},
   {path : "films", redirectTo: '/listeFilms'},
-  {path:"",redirectTo: '/listeFilms',pathMatch:'full'}
+  {path:"",redirectTo: '/acceul',pathMatch:'full'}
+
 ];
 
 @NgModule({

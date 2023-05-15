@@ -8,21 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class PlaceService {
 
+  private place : Place | undefined;
+
   private _url : string = 'http://localhost:9091/place_api';
 
   constructor(private httpClient : HttpClient) { }
-  
-  getPlaceById(id : number) : Observable<Place>{
+
+ /* getAllPlaceForASalle(idSalle : number) : Observable<Place[]>{
+    return this.httpClient.get<Place[]>(this._url + "/getAll");
+  }*/
+  updatePlace(palce : Place) : Observable<Place>{
+    return this.httpClient.put<Place>(this._url,palce);
+  }
+  getPlaceId(id : number) : Observable<Place>{
     return this.httpClient.get<Place>(this._url + "/" + id);
   }
 
-  getAllPlace() : Observable<Place[]>{
-    return this.httpClient.get<Place[]>(this._url);
+  getAllPlaceForAShow(idProg : number) : Observable<Place[]>{
+    return this.httpClient.get<Place[]>(this._url + "/getAll");
   }
-
-  getAllPlaceByProgrammation(idProg : number) : Observable<Place[]>{
-    return this.httpClient.get<Place[]>(this._url + "/allProg/" + idProg);
-  }
-  
 
 }

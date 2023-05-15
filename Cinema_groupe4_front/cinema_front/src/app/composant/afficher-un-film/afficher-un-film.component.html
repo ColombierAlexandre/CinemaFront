@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <div class="container-objet">
         <div class="container-text-film-semaine">
             <h3>Les films de la semaine</h3>
@@ -78,4 +78,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
+<div *ngFor="let list of filmListe">
+    <div *ngFor="let film of list">
+        <div>
+            <h3>{{film | json}}</h3>
+        </div>
+        
+    </div>
+    <hr>
+</div>
