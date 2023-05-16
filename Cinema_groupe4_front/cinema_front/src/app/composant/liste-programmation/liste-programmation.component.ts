@@ -4,6 +4,10 @@ import { ProgrammationService } from 'src/app/service/programmation.service';
 import { Film } from 'src/app/model/film';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { FilmService } from 'src/app/service/film.service';
+import { Cinema } from 'src/app/model/cinema';
+import { CinemaService } from 'src/app/service/cinema.service';
+
 
 @Component({
   selector: 'app-liste-programmation',
@@ -12,17 +16,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ListeProgrammationComponent {
     prog : Programmation[] = [];
-    constructor(private progService : ProgrammationService, private router : ActivatedRoute, private newroute : Router){}
+    film : Film | any;
+    cinema : Cinema | any;
+    constructor(private cinemaService : CinemaService, private filmService : FilmService, private progService : ProgrammationService, private newroute : Router){}
 
     ngOnInit():void{
-      this.router.params.subscribe(params => {
-        const filmid = +params['id'];
-        this.getListeProgrammationsByFilm(filmid);
-    })
-  }
+      this.film = this.filmService.film;
+      this.cinema = this.cinemaService.cinema;
+      this.filmService.getFilmBoById(this.film.filmId);
+      this.getListeProgrammationsByFilmAndCinema(this.film,this.cinema);
+    }
 
-    getListeProgrammationsByFilm(filmId : number){
-        this.progService.getProgByFilm(filmId).subscribe({
+
+
+    getListeProgrammationsByFilmAndCinema(film : Film, cinema : Cinema){
+        this.progService.getProgByFilmAndCinema(film, cinema).subscribe({
           next : (donneesProg)=>{ this.prog = donneesProg},
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{}
@@ -37,8 +45,8 @@ export class ListeProgrammationComponent {
           })
     }
 
-    AllerVersReservation(programmation : Programmation ){
-      this.newroute.navigate(['/places',programmation]);
+    AllerVersReservation(programmationId : number ){
+      this.newroute.navigate(['/places',programmationId]);
     }
 
 }
