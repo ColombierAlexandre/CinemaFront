@@ -1,39 +1,32 @@
-<!-- <div class="container-formulaire">
-    <form action="#" class="form-connection">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Adresse Mail</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Mot de Passe</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-labelledby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Votre mot de passe doit avoir 6-20 caractaires.
-              </span>
-            </div>
+<div class="container">
+  <div class="sub-container">
+      <div class="left-container" id="signIn">
+          <div class="left">
+              <h1 class="a-heading">SIGN IN</h1>
+              <form class="login">
+                  <input type="email" placeholder="Email">
+                  <input type="password" placeholder="Password">
+                  <p class="f-password">Forgot password?</p>
+                  <button type="submit" class="s-button">Sign In</button>
+                  <p class="n-new">New Member<i class="t-button"
+                      aria-hidden="true" onclick="showSignup()">Sign up now</i></p>
+              </form>
           </div>
-    </form>
-</div> -->
-<h1>hello</h1>
-<div *ngFor="let utilisateur of utilisateurs">
-  <ul >
-      <li>{{utilisateur.id}}</li>
-      <li>{{utilisateur.email}}</li>
-      <li>{{utilisateur.motDePasse}}</li>
-      <li>{{utilisateur.nom}}</li>
-      <li>{{utilisateur.prenom}}</li>
-      <li>{{utilisateur.ville}}</li>
-      <li>{{utilisateur.numeroEtRue}}</li>
-      <li>{{utilisateur.codePostal}}</li>
-      <li>{{utilisateur.numeroCB}}</li>
-      <li>{{utilisateur.criptogramme}}</li>
-      <li>{{utilisateur.dateNaissance}}</li>
-      <hr>
-  </ul>
+      </div>
+      <div class="right-container" id="signUp">
+          <div class="right">
+              <h1 class="a-heading">SIGN UP</h1>
+              <form class="signup">
+                  <input type="text" placeholder="Name">
+                  <input type="email" placeholder="Email">
+                  <input type="password" placeholder="Password">
+                  <button type="submit" class="s-button">SIGN IN</button>
+                  <p class="n-new">Already have an account?<i 
+                      class="t-button" aria-hidden="true" 
+                      onclick="hideSignup()">Sign in</i></p>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>
 
