@@ -1,15 +1,13 @@
-import { Programmation } from "./programmation";
-
 export class Film{
     private _visaExploitation : number;
     private _titre : string;
     private _urlImage : string;
     private _duree : Date;
+    private _dateDeSortie : Date;
     private _realisateur : string;
     private _producteur : string;
     private _acteur : string[];
     private _carcteristique : string[];
-    private _programmations : Programmation[];
 
     get visaExploitation() : number {
         return this._visaExploitation;
@@ -41,6 +39,14 @@ export class Film{
 
     set duree(value : Date) {
         this._duree = value;
+    }
+
+    get dateDeSortie() : Date {
+        return this._dateDeSortie;
+    }
+
+    set dateDeSortie(value : Date) {
+        this._dateDeSortie = value;
     }
 
     get realisateur() : string {
@@ -75,25 +81,17 @@ export class Film{
         this._carcteristique = value;
     }
 
-    get programmations() : Programmation[]{
-        return this._programmations;
-    }
-
-    set programmations(value : Programmation[]) {
-        this._programmations = value;
-    }
-
-    constructor(visaExploitation : number, titre : string, urlImage : string, duree : Date, realisateur : string, 
-        producteur : string, acteur : string[], carcteristique : string[], programmations : Programmation[]){
+    constructor(visaExploitation : number, titre : string, urlImage : string, duree : Date, dateDeSortie : Date, realisateur : string, 
+        producteur : string, acteur : string[], carcteristique : string[], ){
         this._visaExploitation = visaExploitation;
         this._titre = titre;
         this._urlImage = urlImage;
         this._duree = duree;
+        this._dateDeSortie = dateDeSortie;
         this._realisateur = realisateur;
         this._producteur = producteur;
         this._acteur = acteur;
         this._carcteristique = carcteristique;
-        this._programmations = programmations;
     }
 
 }
