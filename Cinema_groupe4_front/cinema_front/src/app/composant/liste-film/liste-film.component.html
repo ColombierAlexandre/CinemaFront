@@ -4,26 +4,15 @@
         <i class="fa-regular fa-magnifying-glass"></i>
     </div>
 
-    <div *ngFor="let film of films" class="container-affiche">
-    
-            <div class="container-image">
-            </div>
-            <div class="container-description ">
-                <h4>{{film.titre}}</h4>
-                <p>{{film.dateDeSortie}}</p>
-                <button type="submit">Détails du film</button> 
-            </div>
-
-    </div>
-
     <div class="container-filmsDuMoment">
         <h3>Films à l'affiche</h3>
 
         <div class="container-listeDesFilms">
 
             <div *ngFor="let film of films_a_l_affiche" class="container-affiche">
-                <div (click)="allerVersUnFilm">
+                <div (click)="allerVersUnFilm(film)">
                     <div class="container-image">
+                        <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                     </div>
                     <div class="container-description ">
                         <h4>{{film.titre}}</h4>
@@ -63,7 +52,7 @@
 
             <div *ngFor="let film of films_a_voir_prochainement" class="container-affiche">
                 <div class="container-image">
-                    <img id="affiche_film" src="{{film.urlImage}}" alt="affiche mario">
+                    <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                 </div>
                 <div class="container-description ">
                     <h4>{{film.titre}}</h4>
