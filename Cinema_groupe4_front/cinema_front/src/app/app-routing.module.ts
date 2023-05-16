@@ -12,7 +12,6 @@ import { ListeProgrammationComponent } from './composant/liste-programmation/lis
 import { AfficherUnFilmComponent } from './composant/afficher-un-film/afficher-un-film.component';
 
 const routes: Routes = [
-
   {path:"accueil", component : AccueilComponent},
   {path:"404", component : ErreurComponent},
   {path:"cinemas",component:AfficherCinemaComponent},
