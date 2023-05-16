@@ -17,19 +17,19 @@
                     <div class="container-description ">
                         <h4>{{film.titre}}</h4>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                        <button type="submit">Détails du film</button>
                     </div>
                 </div>
-                
+
             </div>
             
+
             <div (click)="allerVersUnFilm" class="container-affiche">
                 <div class="container-image">
                     <img id="affiche_film" src="assets/images/Mario_movie.avif" alt="affiche mario">
                 </div>
                 <div class="container-description ">
                     <h4>Titre</h4>
-                    
+
                     <button type="submit">Détails du film</button>
                 </div>
             </div>
@@ -51,15 +51,18 @@
         <div class="container-listeDesFilms">
 
             <div *ngFor="let film of films_a_voir_prochainement" class="container-affiche">
-                <div class="container-image">
-                    <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
-                </div>
-                <div class="container-description ">
-                    <h4>{{film.titre}}</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    <button type="submit">Détails du film</button>
+                <div (click)="allerVersUnFilm(film)">
+                    <div class="container-image">
+                        <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
+                    </div>
+                    <div class="container-description ">
+                        <h4>{{film.titre}}</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </div>
                 </div>
             </div>
+
+
             <div class="container-affiche">
                 <div class="container-image">
                 </div>

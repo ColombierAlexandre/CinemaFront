@@ -8,7 +8,7 @@ import { PlaceComponent } from './composant/place/place.component';
 import { ValiderTicketComponent } from './composant/valider-ticket/valider-ticket.component';
 
 const routes: Routes = [
-  {path:"acceul", component : AfficherUnFilmComponent},
+  {path:"accueil", component : AfficherUnFilmComponent},
   {path:"listeFilms",component:ListeFilmComponent},
   {path:"validerTicket",component:ValiderTicketComponent},
   {path:"ticket",component:ValiderTicketComponent},
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path : "ticket", redirectTo: '/validerTicket'},
   {path : "cinemas", redirectTo: '/acceul'},
   {path : "films", redirectTo: '/listeFilms'},
-  {path:"",redirectTo: '/acceul',pathMatch:'full'}
+  {path:"",redirectTo: '/accueil',pathMatch:'full'}
 
 ];
 
