@@ -1,71 +1,23 @@
-<!-- <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" routerLink="home" routerLinkActive="active"  id="nomCinema">
-                <img [src]="logo" width="80" height="80"
-                    class="d-inline-block align-text-top">
-                <p>CineVille</p>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="films" routerLinkActive="active">Films</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="cinemas" routerLinkActive="active">Cinémas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="offres" routerLinkActive="active">Offres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="cine-pass" routerLinkActive="active">CinéPass</a>
-                    </li>
-                </ul>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="creer-un-compte" routerLinkActive="active">Créer un compte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="se-connecter" routerLinkActive="active">Se connecter</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header> -->
-
 <header>
 
     <div class="navbar">
         <div class="logo"><a href="#">Movie Theater Project</a></div>
         <ul class="links">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Film</a></li>
-            <li><a href="#">Nos Cinema</a></li>
+            <li><a href="/accueil">Accueil</a></li>
+            <li><a href="/listeFilm">Film</a></li>
+            <li><a href="/cinemas">Nos Cinema</a></li>
             <li><a href="#">Avantages</a></li>
-            <li><a href="#">Se connecter</a></li>
-            <li><a href="#">Créer un compte</a></li>
+            <li><a href="/identification">Se connecter</a></li>
         </ul>
-        <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
+        <div class="toggle_btn"  #myDiv>
+            <i class="fa-solid fa-bars" #myI></i>
         </div>
     </div>
-    <div class="dropdown_menu">
-        <li><a href="#">Accueil</a></li>
-            <li><a href="#">Film</a></li>
-            <li><a href="#">Nos Cinema</a></li>
+    <div class="dropdown_menu" #myDdm>
+        <li><a href="/accueil">Accueil</a></li>
+            <li><a href="/listeFilm">Film</a></li>
+            <li><a href="/cinemas">Nos Cinema</a></li>
             <li><a href="#">Avantages</a></li>
-            <li><a href="#">Se connecter</a></li>
-            <li><a href="#">Créer un compte</a></li>
+            <li><a href="/identification">Se connecter</a></li>
     </div>
-    
 </header>
