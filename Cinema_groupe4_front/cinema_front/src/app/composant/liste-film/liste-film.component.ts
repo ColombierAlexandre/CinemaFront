@@ -18,6 +18,7 @@ export class ListeFilmComponent {
   dateDuJour: Date = new Date()
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
+
   ngOnInit() : void {
     this.getListeFilms()
   }

@@ -1,187 +1,81 @@
-<section>
+<!-- <section>
     <div class="container-objet">
         <div class="container-text-film-semaine">
             <h3>Les films de la semaine</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-
-                <div class="d-block w-100 container-objet">
-                        <div class="container-slide">
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-item active">
-
-                <div class="d-block w-100 container-objet">
-                        <div class="container-slide">
-                            <div class="container-affiche">
-                                <div class="container-top">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-block w-100 container-objet">
+                        <div class="container">
+                            <div class="container-film" *ngFor="let film of films">
+                                <div class="container-affiche">
+                                    <img src="{{film.afficheUrl}}" alt="">
                                 </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
+                                <div class="container-text">
+                                    <h1>{{film.titre}}</h1>
+                                    <p>{{film.synopsis}}</p>
+                                    <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
+                                        film</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
-
-            </div>
-            <div class="carousel-item active">
-
-                <div class="d-block w-100 container-objet">
-                        <div class="container-slide">
-                            <div class="container-affiche">
-                                <div class="container-top">
+                <div class="carousel-item active">
+                    <div class="d-block w-100 container-objet">
+                        <div class="container">
+                            <div class="container-film" *ngFor="let film of films">
+                                <div class="container-affiche">
+                                    <img src="{{film.afficheUrl}}" alt="">
                                 </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
-                                </div>
-                            </div>
-                            <div class="container-affiche">
-                                <div class="container-top">
-                                </div>
-                                <div class="container-bot ">
-                                    <h4>Titre</h4>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                                    <button type="submit">lien du film</button>
+                                <div class="container-text">
+                                    <h1>{{film.titre}}</h1>
+                                    <p>{{film.synopsis}}</p>
+                                    <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
+                                        film</button>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
-
+                <div class="carousel-item active">
+                    <div class="d-block w-100 container-objet">
+                        <div class="container">
+                            <div class="container-film" *ngFor="let film of films">
+                                <div class="container-affiche">
+                                    <img src="{{film.afficheUrl}}" alt="">
+                                </div>
+                                <div class="container-text">
+                                    <h1>{{film.titre}}</h1>
+                                    <p>{{film.synopsis}}</p>
+                                    <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
+                                        film</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                     data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        
     </div>
-</div>
-</section>
+</section> -->
