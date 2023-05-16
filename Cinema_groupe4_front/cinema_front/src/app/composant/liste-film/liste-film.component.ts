@@ -41,7 +41,8 @@ export class ListeFilmComponent {
   }
 
   allerVersUnFilm(film : Film ){
-    this.router.navigate(['/acceuil',film]);
+    this.filmService.film = film;
+    this.router.navigateByUrl("/accueil");
   }
 
 }

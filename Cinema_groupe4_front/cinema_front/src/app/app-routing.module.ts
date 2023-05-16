@@ -11,7 +11,6 @@ import { PaymentFormComponent } from './composant/payment-form/payment-form.comp
 import { ListeProgrammationComponent } from './composant/liste-programmation/liste-programmation.component';
 
 const routes: Routes = [
-
   {path:"accueil", component : AccueilComponent},
   {path:"404", component : ErreurComponent},
   {path:"cinemas",component:AfficherCinemaComponent},
