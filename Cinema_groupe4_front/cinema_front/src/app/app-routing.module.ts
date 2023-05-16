@@ -22,11 +22,6 @@ const routes: Routes = [
   {path:"payement", component : PaymentFormComponent},
   {path:"prog", component : ListeProgrammationComponent},
 
-  
-  
-  
-
-  
   {path:"",redirectTo: '/accueil',pathMatch:'full'}
 
 ];
