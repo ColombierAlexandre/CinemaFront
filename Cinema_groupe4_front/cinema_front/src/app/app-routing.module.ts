@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"validerTicket",component:ValiderTicketComponent},
   {path:"ticket",component:ValiderTicketComponent},
   {path:"places",component:PlaceComponent},
-  
+
   {path : "ticket", redirectTo: '/validerTicket'},
   {path : "cinemas", redirectTo: '/acceul'},
   {path : "films", redirectTo: '/listeFilms'},
