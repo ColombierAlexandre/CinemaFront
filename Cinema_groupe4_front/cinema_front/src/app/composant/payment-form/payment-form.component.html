@@ -1,0 +1,66 @@
+<body>
+    <div class="container">
+        <div class="left">
+            <p>Payment methods</p>
+            <hr style="border : 1px solid #ccc; margin: 15px;">
+            <div class="methods">
+                <div onclick="doFun()" id="tColorA" style="color: greenyellow;">
+                    <i class="fa-solid fa-building-columns"></i>Payement by card
+                </div>
+                <div onclick="dofunA()" id="tColorB"><i class="fa-solid fa-building-columns">
+                    </i>Internet banks</div>
+                <div onclick="dofunB()" id="tColorC"><i class="fa-solid fa-wallet">
+                    </i>Apple/Google pay</div>
+                <hr style="border : 1px solid #ccc; margin: 15px;">
+            </div>
+        </div>
+        <div class="center">
+            <a href="https://www.shift4shop.com/credit-card-logos.html">
+                <img alt="Credit Card Logos" title="Credit Card Logos"
+                    src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="250" height="auto"></a>
+            <hr style="border : 1px solid #ccc; margin: 15px;">
+            <div class="card-details">
+                <form>
+                    <p>Card number</p>
+                    <div class="c-number" id="c-number">
+                        <input class="cc-number" id="number" placeholder="Card number" maxlength="19" required>
+                        <i class="fa-solid fa-credit-card" style="margin: 0;"></i>
+                    </div>
+                    <div class="c-details">
+                        <div>
+                            <p>Expiry date</p>
+                            <input id="e-date" class="cc-exp" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div>
+                            <p>CW</p>
+                            <div class="cvv-ox" id="cvv-ox">
+                                <input class="cc-cvv" id="cvv" placeholder="CVV" maxlength="3" required>
+                                <i class="fa-solid fa-circle-question" title="3 digits on the back of card"
+                                    style="cursor: pointer;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email">
+                        <p>Email</p>
+                        <input type="email" placeholder="exemple@email.com" id="email" required>
+                    </div>
+                    <button>Pay Now</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <p>Order information</p>
+            <hr style="border : 1px solid #ccc; margin: 15px;">
+            <div class="details">
+                <div style="font-weight: bold; padding: 3px 0;">Order discription</div>
+                <div style="padding: 3px 0;">Test payment</div>
+            </div>
+            <hr style="border : 1px solid #ccc; margin: 15px;">
+            <a href="https://www.shift4shop.com/credit-card-logos.html">
+                <img alt="Credit Card Logos" title="Credit Card Logos"
+                    src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="100%" height="auto"
+                    id="image-right"></a>
+        </div>
+
+    </div>
+</body>
