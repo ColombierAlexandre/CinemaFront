@@ -45,8 +45,9 @@ export class ListeProgrammationComponent {
           })
     }
 
-    AllerVersReservation(programmationId : number ){
-      this.newroute.navigate(['/places',programmationId]);
+    AllerVersReservation(programmation : Programmation){
+      this.progService.progra = programmation;
+      this.newroute.navigateByUrl("/places");
     }
 
 }

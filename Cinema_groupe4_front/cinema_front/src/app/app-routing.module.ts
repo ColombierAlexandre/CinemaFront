@@ -13,6 +13,7 @@ const routes: Routes = [
   {path : "films", component : ListeFilmComponent},
   {path:"places",component:PlaceComponent},
   {path:"ticket",component:ValiderTicketComponent}
+  
 ];
 
 @NgModule({

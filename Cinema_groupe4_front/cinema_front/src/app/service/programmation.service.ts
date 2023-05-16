@@ -11,6 +11,8 @@ import { Cinema } from '../model/cinema';
 })
 export class ProgrammationService {
 
+  progra : Programmation | any;
+
   private _url : string = 'http://localhost:9091/programmationBo_api';
 
   constructor(private httpClient : HttpClient, private router : Router, private prog : ProgrammationService) { }
