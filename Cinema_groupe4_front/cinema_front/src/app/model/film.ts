@@ -37,6 +37,14 @@ export class Film{
         return this._duree;
     }
 
+    get afficheUrl() : string {
+        return this._afficheUrl;
+    }
+
+    set afficheUrl(value : string) {
+        this._afficheUrl = value;
+    }
+
     set duree(value : Date) {
         this._duree = value;
     }
