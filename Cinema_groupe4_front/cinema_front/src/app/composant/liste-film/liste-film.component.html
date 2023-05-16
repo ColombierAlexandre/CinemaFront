@@ -10,7 +10,7 @@
         <div class="container-listeDesFilms">
 
             <div *ngFor="let film of films_a_l_affiche" class="container-affiche">
-                <div (click)="allerVersUnFilm(film)">
+                <div (click)="allerVersProgs(film)">
                     <div class="container-image">
                         <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                     </div>

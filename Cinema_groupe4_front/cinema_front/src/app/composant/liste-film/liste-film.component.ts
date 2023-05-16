@@ -40,9 +40,14 @@ export class ListeFilmComponent {
     })
   }
 
+  allerVersProgs(film : Film){
+    this.filmService.film = film;
+    this.router.navigateByUrl("/prog");
+  }
+
   allerVersUnFilm(film : Film ){
     this.filmService.film = film;
-    this.router.navigateByUrl("/accueil");
+    this.router.navigateByUrl("/unfilm");
   }
 
 }
