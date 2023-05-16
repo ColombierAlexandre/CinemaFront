@@ -15,37 +15,28 @@ export class ListeFilmComponent {
   films : Film[] = []
   films_a_l_affiche : Film[] = []
   films_a_voir_prochainement : Film[] = []
+  dateDuJour: Date = new Date()
+  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
   ngOnInit() : void {
     this.getListeFilms()
-    this.get_liste_films_a_l_affiche()
-    this.get_liste_films_a_voir_prochainement()
   }
 
   getListeFilms(){
     this.filmService.getAllFilmBo().subscribe({
       next : (filmsData) => {this.films = filmsData},
       error : (erreur) => {console.log(erreur)},
-      complete : () => {}
+      complete : () => {
+
+        for (let i = 0; i < this.films.length; i++) {
+          if (new Date(this.films[i].dateDeSortie) <= this.dateDuJour){
+          this.films_a_l_affiche.push(this.films[i]);
+          }else{
+            this.films_a_voir_prochainement.push(this.films[i]);
+            }
+        }
+      }
     })
-  }
-
-  get_liste_films_a_l_affiche(){
-    this.getListeFilms()
-    this.films.forEach(film => {
-      if (film.programmations.length > 0){
-        this.films_a_l_affiche.push(film)
-      }
-    });
-  }
-
-  get_liste_films_a_voir_prochainement(){
-    this.getListeFilms()
-    this.films.forEach(film => {
-      if (film.programmations.length == 0){
-        this.films_a_l_affiche.push(film)
-      }
-    });
   }
 
   allerVersUnFilm(film : Film ){
