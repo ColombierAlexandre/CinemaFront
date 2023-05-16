@@ -18,8 +18,8 @@ export class ListeProgrammationComponent {
       this.router.params.subscribe(params => {
         const filmid = +params['id'];
         this.getListeProgrammationsByFilm(filmid);
-    })
-  }
+      })
+    }
 
     getListeProgrammationsByFilm(filmId : number){
         this.progService.getProgByFilm(filmId).subscribe({
@@ -37,8 +37,8 @@ export class ListeProgrammationComponent {
           })
     }
 
-    AllerVersReservation(programmation : Programmation ){
-      this.newroute.navigate(['/places',programmation]);
+    AllerVersReservation(programmationId : number ){
+      this.newroute.navigate(['/places',programmationId]);
     }
 
 }

@@ -10,11 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ProgrammationService {
 
-  private prog : ProgrammationService | undefined;
-
   private _url : string = 'http://localhost:9091/programmationBo_api';
 
-  constructor(private httpClient : HttpClient, private router : Router) { }
+  constructor(private httpClient : HttpClient, private router : Router, private prog : ProgrammationService) { }
 
   getAllProg():Observable<Programmation[]>{
     return this.httpClient.get<[Programmation]>(this._url);

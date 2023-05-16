@@ -17,8 +17,8 @@ export class PlaceService {
  /* getAllPlaceForASalle(idSalle : number) : Observable<Place[]>{
     return this.httpClient.get<Place[]>(this._url + "/getAll");
   }*/
-  updatePlace(palce : Place) : Observable<Place>{
-    return this.httpClient.put<Place>(this._url,palce);
+  updatePlace(place : Place) : Observable<Place>{
+    return this.httpClient.put<Place>(this._url,place);
   }
   getPlaceId(id : number) : Observable<Place>{
     return this.httpClient.get<Place>(this._url + "/" + id);

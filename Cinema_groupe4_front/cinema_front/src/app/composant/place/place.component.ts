@@ -15,7 +15,7 @@ export class PlaceComponent {
   places : Place[] = [];
   place : Place | any;
 
-  constructor(place : Place, private progServ : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
+  constructor(private progServ : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
 
   ngOnInit():void{
     
@@ -33,12 +33,17 @@ export class PlaceComponent {
     })
   }
 
-  AllerVersTicket(place : Place ){
-    this.newroute.navigate(['/ticket',place]);
+  AllerVersTicket(placeId : number ){
+    this.newroute.navigate(['/ticket',placeId]);
   }
 
-  UpdatePlace(place2 : Place){
-    this.placeService.updatePlace(place2).subscribe({
+  UpdatePlace(place2Id : number){
+    this.placeService.getPlaceId(place2Id).subscribe({
+      next : (placeupdate)=>{ this.place= placeupdate},
+          error : (erreur)=>{ console.log(erreur)},
+          complete : ()=>{}
+    })
+    this.placeService.updatePlace(this.place).subscribe({
       next : (placeupdate)=>{ this.place= placeupdate},
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{}
