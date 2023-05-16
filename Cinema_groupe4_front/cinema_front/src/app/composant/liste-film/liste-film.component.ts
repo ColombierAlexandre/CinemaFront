@@ -16,36 +16,36 @@ export class ListeFilmComponent {
   films_a_l_affiche : Film[] = []
   films_a_voir_prochainement : Film[] = []
 
-  ngOnInit() : void {
-    this.get_liste_films_a_l_affiche()
-    this.get_liste_films_a_voir_prochainement()
-  }
+  // ngOnInit() : void {
+  //   this.get_liste_films_a_l_affiche()
+  //   this.get_liste_films_a_voir_prochainement()
+  // }
 
-  getListeFilms(){
-    this.filmService.getAllFilm().subscribe({
-      next : (filmsData) => {this.films = filmsData},
-      error : (erreur) => {console.log(erreur)},
-      complete : () => {}
-    })
-  }
+  // getListeFilms(){
+  //   this.filmService.getAllFilm().subscribe({
+  //     next : (filmsData) => {this.films = filmsData},
+  //     error : (erreur) => {console.log(erreur)},
+  //     complete : () => {}
+  //   })
+  // }
 
-  get_liste_films_a_l_affiche(){
-    this.getListeFilms()
-    this.films.forEach(film => {
-      if (film.programmations.length > 0){
-        this.films_a_l_affiche.push(film)
-      }
-    });
-  }
+  // get_liste_films_a_l_affiche(){
+  //   this.getListeFilms()
+  //   this.films.forEach(film => {
+  //     if (film.programmations.length > 0){
+  //       this.films_a_l_affiche.push(film)
+  //     }
+  //   });
+  // }
 
-  get_liste_films_a_voir_prochainement(){
-    this.getListeFilms()
-    this.films.forEach(film => {
-      if (film.programmations.length == 0){
-        this.films_a_l_affiche.push(film)
-      }
-    });
-  }
+  // get_liste_films_a_voir_prochainement(){
+  //   this.getListeFilms()
+  //   this.films.forEach(film => {
+  //     if (film.programmations.length == 0){
+  //       this.films_a_l_affiche.push(film)
+  //     }
+  //   });
+  // }
 
   allerVersUnFilm(film : Film ){
     this.router.navigate(['/acceuil',film]);

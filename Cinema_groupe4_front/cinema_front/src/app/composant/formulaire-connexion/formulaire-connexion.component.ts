@@ -26,4 +26,17 @@ export class FormulaireConnexionComponent implements OnInit{
     });
   }
 
+signup = document.getElementById('signUp');
+signin = document.getElementById('signIn');
+
+// showSignup(){
+//     this.signin.style.display = "none";
+//     this.signup.style.display = "block";
+// }
+
+// hideSignup(){
+//     this.signin.style.display = 'block';
+//     this.signup.style.display = 'none';
+// }
+
 }
