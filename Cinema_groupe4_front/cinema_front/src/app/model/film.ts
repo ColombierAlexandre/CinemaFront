@@ -4,6 +4,7 @@ export class Film{
     private _visaExploitation : number;
     private _titre : string;
     private _duree : Date;
+    private _afficheUrl : string;
     private _realisateur : string;
     private _producteur : string;
     private _acteur : string[];
@@ -28,6 +29,14 @@ export class Film{
 
     get duree() : Date {
         return this._duree;
+    }
+
+    get afficheUrl() : string {
+        return this._afficheUrl;
+    }
+
+    set afficheUrl(value : string) {
+        this._afficheUrl = value;
     }
 
     set duree(value : Date) {
@@ -75,10 +84,12 @@ export class Film{
     }
 
     constructor(visaExploitation : number, titre : string, duree : Date, realisateur : string, 
-        producteur : string, acteur : string[], carcteristique : string[], programmations : Programmation[]){
+        producteur : string, acteur : string[], carcteristique : string[], programmations : Programmation[],
+        afficheUrl : string){
         this._visaExploitation = visaExploitation;
         this._titre = titre;
         this._duree = duree;
+        this._afficheUrl = afficheUrl;
         this._realisateur = realisateur;
         this._producteur = producteur;
         this._acteur = acteur;

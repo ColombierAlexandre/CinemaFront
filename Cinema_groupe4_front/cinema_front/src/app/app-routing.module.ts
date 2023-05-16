@@ -9,6 +9,7 @@ import { ReservationComponent } from './affichage/reservation/reservation.compon
 import { FilmsComponent } from './affichage/films/films.component';
 import { PaymentFormComponent } from './composant/payment-form/payment-form.component';
 import { ListeProgrammationComponent } from './composant/liste-programmation/liste-programmation.component';
+import { AfficherUnFilmComponent } from './composant/afficher-un-film/afficher-un-film.component';
 
 const routes: Routes = [
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"validerTicket",component:ValiderTicketComponent},
   {path:"payement", component : PaymentFormComponent},
   {path:"prog", component : ListeProgrammationComponent},
+  {path:"unfilm", component : AfficherUnFilmComponent},
 
   {path:"",redirectTo: '/accueil',pathMatch:'full'}
 
