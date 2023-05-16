@@ -33,16 +33,11 @@ export class PlaceComponent {
     })
   }
 
-  AllerVersTicket(placeId : number ){
-    this.newroute.navigate(['/ticket',placeId]);
+  AllerVersTicket(place : Place ){
+    this.newroute.navigate(['/ticket', place]);
   }
 
-  UpdatePlace(place2Id : number){
-    this.placeService.getPlaceId(place2Id).subscribe({
-      next : (placeupdate)=>{ this.place= placeupdate},
-          error : (erreur)=>{ console.log(erreur)},
-          complete : ()=>{}
-    })
+  UpdatePlace(place : Place){
     this.placeService.updatePlace(this.place).subscribe({
       next : (placeupdate)=>{ this.place= placeupdate},
           error : (erreur)=>{ console.log(erreur)},
