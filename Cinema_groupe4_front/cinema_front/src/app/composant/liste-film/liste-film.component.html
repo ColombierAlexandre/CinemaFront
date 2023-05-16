@@ -10,8 +10,9 @@
         <div class="container-listeDesFilms">
 
             <div *ngFor="let film of films_a_l_affiche" class="container-affiche">
-                <div (click)="allerVersUnFilm">
+                <div (click)="allerVersUnFilm(film)">
                     <div class="container-image">
+                        <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                     </div>
                     <div class="container-description ">
                         <h4>{{film.titre}}</h4>
@@ -21,6 +22,7 @@
                 </div>
                 
             </div>
+            
             <div (click)="allerVersUnFilm" class="container-affiche">
                 <div class="container-image">
                     <img id="affiche_film" src="assets/images/Mario_movie.avif" alt="affiche mario">
@@ -48,11 +50,12 @@
 
         <div class="container-listeDesFilms">
 
-            <div class="container-affiche">
+            <div *ngFor="let film of films_a_voir_prochainement" class="container-affiche">
                 <div class="container-image">
+                    <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                 </div>
                 <div class="container-description ">
-                    <h4>Titre</h4>
+                    <h4>{{film.titre}}</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                     <button type="submit">Détails du film</button>
                 </div>
