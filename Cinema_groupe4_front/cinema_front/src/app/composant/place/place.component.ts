@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Programmation } from 'src/app/model/programmation';
 import { ActivatedRoute } from '@angular/router';
 import { ProgrammationService } from 'src/app/service/programmation.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-place',
@@ -15,15 +16,13 @@ import { ProgrammationService } from 'src/app/service/programmation.service';
 export class PlaceComponent {
   places : Place[] = [];
   place : Place | any;
+  programmation : Programmation | any;
 
   constructor(private progServ : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
 
   ngOnInit():void{
-    
-    this.router.params.subscribe(params => {
-     const idPrg = +params['id'];
-     this.AllPlacesForShow(idPrg);
-    });
+    this.programmation = this.progServ.progra;
+   this.AllPlacesForShow(this.programmation.id);
   }
 
   AllPlacesForShow (programmationId : number){
