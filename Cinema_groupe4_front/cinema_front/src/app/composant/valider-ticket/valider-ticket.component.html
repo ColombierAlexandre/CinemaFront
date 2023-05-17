@@ -1,7 +1,7 @@
 <div class="formcontainer">
     <div class="container-formulaire">
 
-    <form class="form-commande">
+    <form class="form-commande" #commandeForm="ngForm" (ngSubmit)="validerTicket()">
 
         <div class="logo_cinema"><img [src]="logo" width="80" height="80" 
             class="d-inline-block align-text-top">
@@ -14,25 +14,25 @@
             <div class="mb-3 row">
                 <label for="staticTitle" class="col-sm-2 col-form-label">Titre du film</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticTitle" value="Mario">
+                    <input type="text" readonly class="form-control-plaintext" id="staticTitle" [(ngModel)]="prog.film.titre">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="staticSalle" class="col-sm-2 col-form-label">Salle</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticSalle" value="A-03">
+                    <input type="text" readonly class="form-control-plaintext" id="staticSalle" [(ngModel)]="prog.salle.numero">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="staticHeure" class="col-sm-2 col-form-label">Heure</label>
+                <label for="staticHeure" class="col-sm-2 col-form-label">Date et heure</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticHeure" value="19h30">
+                    <input type="text" readonly class="form-control-plaintext" id="staticHeure" [(ngModel)]="prog.dateHeureProg">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="staticCinema" class="col-sm-2 col-form-label">Cinéma</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="staticCinema" value="Cinéma-Wilson">
+                    <input type="text" readonly class="form-control-plaintext" id="staticCinema" [(ngModel)]="cinema.nom">
                 </div>
             </div>
         </div>
@@ -44,15 +44,15 @@
             <legend>Informations personnelles</legend>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="FormControlInput1" placeholder="Jean">
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="Dupont" [(ngModel)]="utilisateur.nom">
             </div>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="FormControlInput1" placeholder="Dupont">
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="Janne" [(ngModel)]="utilisateur.prenom">
             </div>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">adresse mail</label>
-                <input type="email" class="form-control" id="FormControlInput1" placeholder="jean.dupont@example.com">
+                <input type="email" class="form-control" id="FormControlInput1" placeholder="janne.dupont@example.com" [(ngModel)]="utilisateur.email">
             </div>
         </div>
         <br>
@@ -63,21 +63,21 @@
             <legend>Adresse de facturation</legend>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">Adresse</label>
-                <input type="text" class="form-control" id="FormControlInput1" placeholder="13 faculté de pharmacie">
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="13 faculté de pharmacie" [(ngModel)]="utilisateur.numeroEtRue">
             </div>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">Code postal</label>
-                <input type="text" class="form-control" id="FormControlInput1" placeholder="31000">
+                <input type="text" class="form-control" id="FormControlInput1" placeholder="31000" [(ngModel)]="utilisateur.codePostal">
             </div>
             <div class="mb-3">
                 <label for="FormControlInput1" class="form-label">Ville</label>
-                <input type="text" class="form-control" id="leFormControlInput1" placeholder="Toulouse">
+                <input type="text" class="form-control" id="leFormControlInput1" placeholder="Toulouse" [(ngModel)]="utilisateur.ville">
             </div>
         </div>
         <br>
         <hr>
 
-        <button class="btn btn-warning" (click)="validerTicket()">Valider la commande</button>
+        <button class="btn btn-warning">Valider la commande</button>
         
     </form>
 </div>
