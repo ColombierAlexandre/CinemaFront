@@ -28,25 +28,28 @@ export class AccueilComponent implements OnInit{
   
   getAllFilm(){
     this.filmService.getAllFilmBo().subscribe({
-      next : (dataFilm)=>{this.films = dataFilm},
+      next : (dataFilm : Film[])=>{this.films = dataFilm},
       error : (erreur)=>{console.log(erreur)},
       complete : ()=>{
-        for (let i = 0; i < this.films.length; i++) {
-          if (new Date(this.films[i].dateDeSortie) <= this.dateDuJour){
-          this.films_a_l_affiche.push(this.films[i]);
-          }else{
-            this.films_a_voir_prochainement.push(this.films[i]);
-          }
-        }
-        for (let i = 0; i < this.films_a_l_affiche.length; i += this.tailleSousListe) {
-          var sousListe = this.films_a_l_affiche.slice(i, i + this.tailleSousListe);
-          this.listeFilms_a_l_affiche.push(sousListe);
-        }
-        for (let i = 0; i < this.films_a_voir_prochainement.length; i += this.tailleSousListe) {
-          var sousListe = this.films_a_voir_prochainement.slice(i, i + this.tailleSousListe);
-          this.listeFilms_a_voir_prochainement.push(sousListe);
-        }
-      }
+        // for (let i = 0; i < this.films.length; i++) {
+        //   if (new Date(this.films[i].dateDeSortie) <= this.dateDuJour){
+        //   this.films_a_l_affiche.push(this.films[i]);
+        //   }else{
+        //     this.films_a_voir_prochainement.push(this.films[i]);
+        //   }
+        // }
+        // for (let i = 0; i < this.films_a_l_affiche.length; i += this.tailleSousListe) {
+        //   var sousListe = this.films_a_l_affiche;
+        //   sousListe.slice(i, i + this.tailleSousListe);
+        //   this.listeFilms_a_l_affiche.push(sousListe);
+        // }
+        // for (let i = 0; i < this.films_a_voir_prochainement.length; i += this.tailleSousListe) {
+        //   var sousListe = this.films_a_voir_prochainement.slice(i, i + this.tailleSousListe);
+        //   this.listeFilms_a_voir_prochainement.push(sousListe);
+        // }
+
+        this.films_a_l_affiche = this.films;
+       }
     })
   }
 
