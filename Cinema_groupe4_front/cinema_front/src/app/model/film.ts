@@ -81,17 +81,29 @@ export class Film{
         this._carcteristique = value;
     }
 
-    constructor(visaExploitation : number, titre : string, afficheUrl : string, duree : Date, dateDeSortie : Date, realisateur : string, 
-        producteur : string, acteur : string[], carcteristique : string[], ){
-        this._visaExploitation = visaExploitation;
-        this._titre = titre;
-        this._afficheUrl = afficheUrl;
-        this._duree = duree;
-        this._dateDeSortie = dateDeSortie;
-        this._realisateur = realisateur;
-        this._producteur = producteur;
-        this._acteur = acteur;
-        this._carcteristique = carcteristique;
+    // constructor(visaExploitation : number, titre : string, afficheUrl : string, duree : Date, dateDeSortie : Date, realisateur : string, 
+    //     producteur : string, acteur : string[], carcteristique : string[], ){
+    //     this._visaExploitation = visaExploitation;
+    //     this._titre = titre;
+    //     this._afficheUrl = afficheUrl;
+    //     this._duree = duree;
+    //     this._dateDeSortie = dateDeSortie;
+    //     this._realisateur = realisateur;
+    //     this._producteur = producteur;
+    //     this._acteur = acteur;
+    //     this._carcteristique = carcteristique;
+    // }
+
+    constructor(){
+        this._visaExploitation = 0;
+        this._titre = "";
+        this._afficheUrl = "";
+        this._duree = new Date;
+        this._dateDeSortie = new Date;
+        this._realisateur = "";
+        this._producteur = "";
+        this._acteur = [];
+        this._carcteristique = [];
     }
 
 }

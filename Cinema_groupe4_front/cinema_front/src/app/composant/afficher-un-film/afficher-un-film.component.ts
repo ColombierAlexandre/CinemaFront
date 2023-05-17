@@ -18,6 +18,8 @@ export class AfficherUnFilmComponent implements OnInit{
   cinema : Cinema | any;
   @Input() listeFilm : Film[] = [];
   film : Film | any;
+  listeFilm1 : Film[] = [];
+  filmAffiche : Film = new Film();
   dateDuJour: Date = new Date();
 
   constructor(private filmService : FilmService, private utilisateurService : UtilisateurService, private cinemaService : CinemaService, private router : Router){}
@@ -25,12 +27,20 @@ export class AfficherUnFilmComponent implements OnInit{
   ngOnInit() : void {
     this.utilisateur = this.utilisateurService.utilisateur;
     this.cinema = this.cinemaService.cinema;
-    this.film = this.listeFilm[1];
+    this.film = this.listeFilm[0];
   }
 
   ngAfterViewInit(): void {
-    console.log("************************",this.film);
-    console.log("------------------------",this.listeFilm);
+    
+    this.listeFilm.forEach((x)=>{
+      this.listeFilm1.push(x);
+    });
+
+    this.filmAffiche = this.listeFilm[0];
+    console.log("******film1***********",this.listeFilm1);
+    console.log("******film[0]*******",this.listeFilm1[0]);
+    console.log("****filmAffiche*******",this.filmAffiche);
+    console.log("------listeFilmrecu-------",this.listeFilm);
   }
   
 
