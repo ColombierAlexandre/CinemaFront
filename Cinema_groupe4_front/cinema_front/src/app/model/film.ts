@@ -25,14 +25,6 @@ export class Film{
         this._titre = value;
     }
 
-    get afficheUrl() : string {
-        return this._afficheUrl;
-    }
-
-    set afficheUrl(value : string) {
-        this._afficheUrl = value;
-    }
-
     get duree() : Date {
         return this._duree;
     }

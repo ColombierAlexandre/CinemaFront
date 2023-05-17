@@ -10,6 +10,8 @@ export class FilmService {
 
   film : Film | any;
 
+  listeFilm : Film[] = [];
+
   private _url : string = 'http://localhost:9091/filmBo_api';
 
   constructor( private httpClient : HttpClient) { }

@@ -11,6 +11,7 @@ import { ProgrammationService } from 'src/app/service/programmation.service';
   templateUrl: './place.component.html',
   styleUrls: ['./place.component.css']
 })
+
 export class PlaceComponent {
   places : Place[] = [];
   place : Place | any;

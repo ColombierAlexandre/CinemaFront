@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="container-film" *ngFor="let film of films">
+    <div class="container-film" *ngFor="let filmSemaine of film">
         <div class="container-affiche">
-            <img src="{{film.afficheUrl}}" alt="">
+            <img src="{{filmSemaine.afficheUrl}}">
         </div>
         <div class="container-text">
-            <h1>{{film.titre}}</h1>
+            <h1>{{filmSemaine.titre}}"</h1>
             <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
                 film</button>
         </div>

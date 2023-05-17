@@ -5,9 +5,13 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements AfterViewInit{
+export class HeaderComponent implements AfterViewInit, OnInit{
   
-  
+  logo : string = "../assets/images/logo.jpg";
+
+  ngOnInit(): void {
+  }
+
   ngAfterViewInit(): void {
     console.log("************************",this.myDiv);
     console.log("++++++++++++++++++++++++",this.myDiv.nativeElement.innerHTML)
@@ -22,22 +26,12 @@ export class HeaderComponent implements AfterViewInit{
   @ViewChild('myDdm')
   myDdm!: ElementRef;
 
-  ngOnInit(): void {
-    
+  clickToggleBtn(){
+    this.myDdm.nativeElement.classList.toggle('open')
+    const isOpen = this.myDdm.nativeElement.classList.contains('open')
+
+    this.myI.nativeElement.classList = isOpen
+      ? 'fa-solid fa-xmark'
+      : 'fa-solid fa-bars'
   }
-  
-
-    logo : string = "../assets/images/logo.jpg";
-
-    toggleBtnIcon : any = document.querySelector('.toggle_btn i')
-    dropDownMenu : any = document.querySelector('.dropdown_menu')
-
-    // clickToggleBtn(){
-    // this.myDdm.classList.toggle('open')
-    //         const isOpen = this.dropDownMenu.classList.contains('open')
-
-    //         this.toggleBtnIcon.classList = isOpen
-    //             ? 'fa-solid fa-xmark'
-    //             : 'fa-solid fa-bars'
-    //         }
 }
