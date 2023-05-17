@@ -21,6 +21,10 @@ export class ProgrammationService {
     return this.httpClient.get<[Programmation]>(this._url);
   }
 
+  getProgById(id : number) : Observable<Programmation> {
+    return this.httpClient.get<Programmation>(this._url + "/" + id);
+  }
+
   getProgByFilmAndCinema(film : Film, cinema : Cinema) : Observable<Programmation[]>{
     return this.httpClient.get<[Programmation]>(this._url + "/getAllByFilmCine/",);
   }
