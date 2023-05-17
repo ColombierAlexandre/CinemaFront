@@ -10,7 +10,7 @@ export class Utilisateur{
 	private _codePostal : number;
 	private _numeroCB : number;
 	private _criptogramme : number;
-	private _dateNaissance : Date;
+	private _dateExpiration : Date;
 
     get id() : number {
         return this._id;
@@ -91,17 +91,17 @@ export class Utilisateur{
         this._criptogramme = value;
     }
 
-    get dateNaissance() : Date {
-        return this._dateNaissance;
+    get dateExpiration() : Date {
+        return this._dateExpiration;
     }
 
-    set dateNaissance(value : Date) {
-        this._dateNaissance = value;
+    set dateExpiration(value : Date) {
+        this._dateExpiration = value;
     }
 
     constructor( id : number, email : string, motDePasse : string, nom : string, prenom : string, 
         ville : string, numeroEtRue : string, codePostal : number, numeroCB : number, 
-        criptogramme : number, dateNaissance : Date){
+        criptogramme : number, dateExpiration : Date){
         this._id = id;
         this._email = email;
         this._motDePasse = motDePasse;
@@ -112,6 +112,6 @@ export class Utilisateur{
         this._codePostal = codePostal;
         this._numeroCB = numeroCB;
         this._criptogramme = criptogramme;
-        this._dateNaissance = dateNaissance;
+        this._dateExpiration = dateExpiration;
     }
 }
