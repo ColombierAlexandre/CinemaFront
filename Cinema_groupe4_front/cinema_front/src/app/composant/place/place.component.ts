@@ -11,8 +11,11 @@ import { ProgrammationService } from 'src/app/service/programmation.service';
   templateUrl: './place.component.html',
   styleUrls: ['./place.component.css']
 })
+
 export class PlaceComponent {
   places : Place[] = [];
+  place : Place | any;
+
   constructor(private progServ : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
 
   ngOnInit():void{
@@ -21,7 +24,6 @@ export class PlaceComponent {
      const idPrg = +params['id'];
      this.AllPlacesForShow(idPrg);
     });
-  
   }
 
   AllPlacesForShow (programmationId : number){
@@ -33,7 +35,17 @@ export class PlaceComponent {
   }
 
   AllerVersTicket(place : Place ){
-    this.newroute.navigate(['/ticket',place]);
+    this.newroute.navigate(['/ticket', place]);
   }
+
+  UpdatePlace(place : Place){
+    this.placeService.updatePlace(this.place).subscribe({
+      next : (placeupdate)=>{ this.place= placeupdate},
+          error : (erreur)=>{ console.log(erreur)},
+          complete : ()=>{}
+    })
+  }
+
+
 
 }

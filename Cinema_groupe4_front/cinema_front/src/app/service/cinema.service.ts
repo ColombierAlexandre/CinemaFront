@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class CinemaService {
 
+  cinema : Cinema | any;
+
   private _url : string = 'http://localhost:9091/cinemaBo_api';
 
   constructor(private httpClient : HttpClient) { }
