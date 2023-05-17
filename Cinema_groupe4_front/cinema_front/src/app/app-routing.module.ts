@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"accueil", component : AccueilComponent},
   {path:"404", component : ErreurComponent},
   {path:"cinemas",component:AfficherCinemaComponent},
-  {path:"listeFilm",component:FilmsComponent},
+  {path:"listeFilms",component:FilmsComponent},
   {path:"identification",component:FormulaireConnexionComponent},
   {path:"reservation",component:ReservationComponent},
   {path:"validerTicket",component:ValiderTicketComponent},

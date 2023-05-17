@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PlaceService {
 
-  private place : Place | undefined;
+  place : Place | undefined;
 
   private _url : string = 'http://localhost:9091/place_api';
 
