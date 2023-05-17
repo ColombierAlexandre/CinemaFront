@@ -13,16 +13,18 @@ export class ProgrammationService {
 
   progra : Programmation | any;
 
-  private _url : string = 'http://localhost:9091/programmationBo_api';
+  private _url : string = 'http://localhost:9091/programmation_api';
 
-  constructor(private httpClient : HttpClient, private router : Router, private prog : ProgrammationService) { }
+  constructor(private httpClient : HttpClient, private router : Router) { }
 
   getAllProg():Observable<Programmation[]>{
-    return this.httpClient.get<[Programmation]>(this._url);
+    return this.httpClient.get<Programmation[]>(this._url);
   }
 
   getProgByFilmAndCinema(film : Film, cinema : Cinema) : Observable<Programmation[]>{
-    return this.httpClient.get<[Programmation]>(this._url + "/getAllByFilmCine/",);
+    return this.httpClient.get<[Programmation]>(this._url + "/getAllByFilmCine/");
   }
+
+  
 
 }
