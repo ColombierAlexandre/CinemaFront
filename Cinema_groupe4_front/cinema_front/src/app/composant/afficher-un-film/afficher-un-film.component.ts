@@ -10,42 +10,32 @@ import { FilmService } from 'src/app/service/film.service';
 })
 export class AfficherUnFilmComponent implements OnInit{
 
+  listeFilm : Film[] = [];
+  film : Film |any;
   films : Film[] =[];
-
+  dateDuJour: Date = new Date()
+  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
   constructor(private filmService : FilmService, private router : Router){}
 
   ngOnInit() : void {
-    this.getListeFilm();
+    this.films = this.filmService.listeFilm;
+    this.film = this.getFilmAlAffiche(this.films);
   }
-
-  getListeFilm(){
-    this.filmService.getAllFilmBo().subscribe({
-      next : (dataFilm)=>{this.films = dataFilm},
-      error : (erreur)=>{console.log(erreur)},
-      complete : ()=>{}
-    })
-
-    // division euclidienne :
-    const filmsLenfth : number = Math.floor(this.films.length/3);
-    const resteFilms : number = this.films.length%3;
-
-    // for(let i= 0; i < filmsLenfth; i++){
-    //   filmListe : Film[] = [];
-      
-    // }((film : Film) => {
-        
-    // });
-  }
-
-  
 
   afficherUnFilm(film : Film){
     this.filmService.film = film;
-    this.router.navigateByUrl("/afficherUnFilm")
+    this.router.navigateByUrl("/unfilm")
   }
-
-  image : string = "../assets/images/django.jpg"
-  affiche_front : string = "../assets/images/django.jpg"
-
+  
+  getFilmAlAffiche(films : Film[]) : Film{
+    for (let i = 0; i < films.length; i++) {
+      if (new Date(films[i].dateDeSortie) <= this.dateDuJour){
+        this.listeFilm.push(films[i]);
+      }
+    }
+     this.film = this.listeFilm[1];
+    return this.film;
+  }
+  
 }

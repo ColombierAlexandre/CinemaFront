@@ -1,5 +1,92 @@
-.container-formulaire{
-    background-color: black;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #888888;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/CinemaFront/Cinema_groupe4_front/cinema_front/src/assets/images/django.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.sub-container{
+    width: 70%;
+    height: 75vh;
+    margin-left: 15%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 3px 3px 50px #aaaaaa;
+    background-image: url(/CinemaFront/Cinema_groupe4_front/cinema_front/src/assets/images/logo.jpg);
+    background-position: 93%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+.left-container{
+    width: 100%;
+}
+.left{
+    width: 40%;
+    margin-top: 65px;
+    margin-left: 70px;
+}
+.login{
+    font-size: 18px;
+}
+.a-heading{
+    margin-top: 25px;
+    color: #29c5f6;
+}
+input{
+    display: block;
+    width: 90%;
+    margin-bottom: 25px;
+    padding: 7px;
+    font-size: 18px;
+    outline: none;
+}
+.f-password{
+    margin: 25%;
+    cursor: pointer;
+    color: #29c5f6;
+}
+.f-password:hover{
+    color: #888888;
+}
+.s-button{
+    border: none;
+    width: 95%;
+    padding : 10px;
+    background-color: #29c5f6;
     color: white;
-    text-align: center;
+    margin-bottom: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.s-button:hover{
+    background-color: #888888;
+}
+.t-button{
+    font-size: 18px;
+    color: #29c5f6;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.t-button:hover{
+    color: #888888;
+}
+.right-container{
+    width: 100%;
+    display: none;
+}
+.right-container{
+    width: 40%;
+    margin-top: 65px;
+    margin-left: 70px;
+}
+.n-new{
+    font-size: 18px;
 }

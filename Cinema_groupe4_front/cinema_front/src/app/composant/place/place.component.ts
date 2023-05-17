@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   templateUrl: './place.component.html',
   styleUrls: ['./place.component.css']
 })
+
 export class PlaceComponent {
   places : Place[] = [];
   place : Place | any;

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ValiderTicketComponent {
 
- 
+  logo : string = "../assets/images/logo.jpg";
+
 }

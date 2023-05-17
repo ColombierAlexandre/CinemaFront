@@ -15,6 +15,11 @@ import { ValiderTicketComponent } from './composant/valider-ticket/valider-ticke
 import { ListeProgrammationComponent } from './composant/liste-programmation/liste-programmation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaymentFormComponent } from './composant/payment-form/payment-form.component';
+import { AccueilComponent } from './affichage/accueil/accueil.component';
+import { ErreurComponent } from './composant/erreur/erreur.component';
+import { ReservationComponent } from './affichage/reservation/reservation.component';
+import { FilmsComponent } from './affichage/films/films.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlaceComponent,
     ValiderTicketComponent,
     ListeProgrammationComponent,
+    PaymentFormComponent,
+    AccueilComponent,
+    ErreurComponent,
+    ReservationComponent,
+    FilmsComponent,
   ],
   imports: [
     BrowserModule,

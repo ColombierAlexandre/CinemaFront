@@ -1,1 +1,79 @@
+<body>
+    <div class="input search my-10">
+        <input type="text" id="searchBar" placeholder="Recherche" class="ng-pristine ng-valid ng-touched">
+        <i class="fa-regular fa-magnifying-glass"></i>
+    </div>
 
+    <div class="container-filmsDuMoment">
+        <h3>Films à l'affiche</h3>
+
+        <div class="container-listeDesFilms">
+
+            <div *ngFor="let film of films_a_l_affiche" class="container-affiche">
+                <div (click)="allerVersProgs(film)">
+                    <div class="container-image">
+                        <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
+                    </div>
+                    <div class="container-description ">
+                        <h4>{{film.titre}}</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+
+            <div (click)="allerVersUnFilm" class="container-affiche">
+                <div class="container-image">
+                    <img id="affiche_film" src="assets/images/Mario_movie.avif" alt="affiche mario">
+                </div>
+                <div class="container-description ">
+                    <h4>Titre</h4>
+
+                    <button type="submit">Détails du film</button>
+                </div>
+            </div>
+            <div class="container-affiche">
+                <div class="container-image">
+                </div>
+                <div class="container-description ">
+                    <h4>Titre</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <button type="submit">Détails du film</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-filmsProchainement">
+        <h3>Prochaines sorties au cinéma</h3>
+
+        <div class="container-listeDesFilms">
+
+            <div *ngFor="let film of films_a_voir_prochainement" class="container-affiche">
+                <div (click)="allerVersUnFilm(film)">
+                    <div class="container-image">
+                        <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
+                    </div>
+                    <div class="container-description ">
+                        <h4>{{film.titre}}</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-affiche">
+                <div class="container-image">
+                </div>
+                <div class="container-description ">
+                    <h4>Titre</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <button type="submit">Détails du film</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>

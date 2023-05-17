@@ -1,8 +1,17 @@
-.container-source{
-    margin: 0;
+*{
+    justify-content: center;
+    width: 100%;
+    height: auto;
     padding: 0;
+    margin: 0;
     text-align: center;
-}
-.footer{
+    background-color: black;
     position: relative;
+}
+app-footer{
+    position: sticky;
+}
+
+.footer{
+    position: fixed;
 }
