@@ -28,27 +28,27 @@ export class HeaderComponent implements AfterViewInit, OnInit{
     console.log("++++++++++++++++++++++++",this.myDiv.nativeElement.innerHTML)
   }
 
-  AllerVersAccueil(cinema : Cinema, utilisateur : Utilisateur){
-    this.utilisateurService.utilisateur = utilisateur;
-    this.cinemaService.cinema = cinema;
+  AllerVersAccueil(){
+    this.utilisateurService.utilisateur = this.utilisateur;
+    this.cinemaService.cinema = this.cinema;
     this.router.navigateByUrl("/accueil")
   }
 
-  AllerVersListeFilm(cinema : Cinema, utilisateur : Utilisateur){
-    this.utilisateurService.utilisateur = utilisateur;
-    this.cinemaService.cinema = cinema;
+  AllerVersListeFilm(){
+    this.utilisateurService.utilisateur = this.utilisateur;
+    this.cinemaService.cinema = this.cinema;
     this.router.navigateByUrl("/listeFilm")
   }
 
-  AllerVersCinemas(cinema : Cinema, utilisateur : Utilisateur){
-    this.utilisateurService.utilisateur = utilisateur;
-    this.cinemaService.cinema = cinema;
+  AllerVersCinemas(){
+    this.utilisateurService.utilisateur = this.utilisateur;
+    this.cinemaService.cinema = this.cinema;
     this.router.navigateByUrl("/cinemas")
   }
 
-  AllerVersUtilisateur(cinema : Cinema, utilisateur : Utilisateur){
-    this.utilisateurService.utilisateur = utilisateur;
-    this.cinemaService.cinema = cinema;
+  AllerVersUtilisateur(){
+    this.utilisateurService.utilisateur = this.utilisateur;
+    this.cinemaService.cinema = this.cinema;
     this.router.navigateByUrl("/identification")
   }
 
