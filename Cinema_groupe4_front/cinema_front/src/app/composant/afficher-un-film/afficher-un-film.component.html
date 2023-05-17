@@ -1,22 +1,25 @@
-<div class="container">
+<!-- <div class="container">
     <div class="container-film" *ngFor="let filmSemaine of film">
         <div class="container-affiche">
             <img src="{{filmSemaine.afficheUrl}}">
         </div>
         <div class="container-text">
             <h1>{{filmSemaine.titre}}"</h1>
-            <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
+            <button class="container-button" (onclick)="afficherUnFilm(film,cinema,utilisateur)">Voir ce
                 film</button>
         </div>
     </div>
-</div>
+</div> -->
 
 
-<!-- <div *ngFor="let list of filmListe">
-    <div *ngFor="let film of list">
-        <div>
-            <h3>{{film | json}}</h3>
-        </div>
+<div *ngFor="let film of film">
+    <div>
+        <p>{{film.visaExploitation}}</p>
+        <div><img src="{{film.afficheUrl}}" alt="" style="height: 150px;"></div>
+        <p>{{film.titre}}</p>
+        <p>{{film.dateDeSortie}}</p>
+        <p>{{film.realisateur}}</p>
+        <p>{{film.producteur}}</p>
     </div>
     <hr>
-</div> -->
+</div>

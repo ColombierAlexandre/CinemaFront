@@ -12,7 +12,10 @@ export class AccueilComponent implements OnInit{
 
   films : Film[] = [];
   films_a_l_affiche : Film[] = [];
+  listeFilms_a_l_affiche : Film[][] = [];
   films_a_voir_prochainement : Film[] = [];
+  listeFilms_a_voir_prochainement : Film[][] = [];
+  tailleSousListe : number = 3;
   dateDuJour: Date = new Date()
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
@@ -22,7 +25,7 @@ export class AccueilComponent implements OnInit{
   ngOnInit(): void {
     this.getAllFilm();
   }
-
+  
   getAllFilm(){
     this.filmService.getAllFilmBo().subscribe({
       next : (dataFilm)=>{this.films = dataFilm},
@@ -34,6 +37,14 @@ export class AccueilComponent implements OnInit{
           }else{
             this.films_a_voir_prochainement.push(this.films[i]);
           }
+        }
+        for (let i = 0; i < this.films_a_l_affiche.length; i += this.tailleSousListe) {
+          var sousListe = this.films_a_l_affiche.slice(i, i + this.tailleSousListe);
+          this.listeFilms_a_l_affiche.push(sousListe);
+        }
+        for (let i = 0; i < this.films_a_voir_prochainement.length; i += this.tailleSousListe) {
+          var sousListe = this.films_a_voir_prochainement.slice(i, i + this.tailleSousListe);
+          this.listeFilms_a_voir_prochainement.push(sousListe);
         }
       }
     })

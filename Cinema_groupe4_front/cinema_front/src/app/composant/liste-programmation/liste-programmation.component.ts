@@ -27,16 +27,14 @@ export class ListeProgrammationComponent {
       this.getListeProgrammationsByFilmAndCinema(this.film,this.cinema);
     }
 
-
-
     getListeProgrammationsByFilmAndCinema(film : Film, cinema : Cinema){
         this.progService.getProgByFilmAndCinema(film, cinema).subscribe({
           next : (donneesProg)=>{ this.prog = donneesProg},
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{}
         })
-
     }
+    
     getListeProgrammations(){
       this.progService.getAllProg().subscribe({
         next : (donneesProg)=>{ this.prog = donneesProg},
