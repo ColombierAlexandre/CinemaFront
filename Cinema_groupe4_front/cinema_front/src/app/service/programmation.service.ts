@@ -15,7 +15,7 @@ export class ProgrammationService {
 
   private _url : string = 'http://localhost:9091/programmationBo_api';
 
-  constructor(private httpClient : HttpClient, private router : Router, private prog : ProgrammationService) { }
+  constructor(private httpClient : HttpClient, private router : Router) { }
 
   getAllProg():Observable<Programmation[]>{
     return this.httpClient.get<[Programmation]>(this._url);

@@ -1,5 +1,3 @@
-import { Programmation } from "./programmation";
-
 export class Place{
     private _idPlace : number;
     private _numPlace : number;

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cinema } from 'src/app/model/cinema';
 import { Film } from 'src/app/model/film';
+import { Utilisateur } from 'src/app/model/utilisateur';
+import { CinemaService } from 'src/app/service/cinema.service';
 import { FilmService } from 'src/app/service/film.service';
+import { UtilisateurService } from 'src/app/service/utilisateur.service';
 
 @Component({
   selector: 'app-liste-film',
@@ -10,17 +14,22 @@ import { FilmService } from 'src/app/service/film.service';
 })
 export class ListeFilmComponent {
 
-  constructor(private filmService : FilmService, private router : Router){}
+  constructor(private filmService : FilmService, private cinemaService : CinemaService, 
+    private utilisateurService : UtilisateurService, private router : Router){}
 
   films : Film[] = []
   films_a_l_affiche : Film[] = []
   films_a_voir_prochainement : Film[] = []
   dateDuJour: Date = new Date()
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' }
+  cinema : Cinema | any
+  utilisateur : Utilisateur | any
 
 
   ngOnInit() : void {
     this.getListeFilms()
+    this.cinema = this.cinemaService.cinema
+    this.utilisateur = this.utilisateurService.utilisateur
   }
 
   getListeFilms(){
@@ -42,11 +51,15 @@ export class ListeFilmComponent {
 
   allerVersProgs(film : Film){
     this.filmService.film = film
+    this.cinemaService.cinema = this.cinema
+    this.utilisateurService.utilisateur = this.utilisateur
     this.router.navigateByUrl("/prog")
   }
 
   allerVersUnFilm(film : Film ){
     this.filmService.film = film
+    this.cinemaService.cinema = this.cinema
+    this.utilisateurService.utilisateur = this.utilisateur
     this.router.navigateByUrl("/unfilm")
   }
 

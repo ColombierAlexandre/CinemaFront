@@ -42,8 +42,8 @@ export class ValiderTicketComponent {
       
     }
     
-    this.utilisateurService.utilisateur = this.utilisateur
     this.cinemaService.cinema = this.cinema
+    this.utilisateurService.utilisateur = this.utilisateur
     this.router.navigateByUrl("/payement")
   }
 
