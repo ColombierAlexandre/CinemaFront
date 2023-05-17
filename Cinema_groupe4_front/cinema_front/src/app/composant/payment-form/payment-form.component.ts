@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cinema } from 'src/app/model/cinema';
+import { CinemaService } from 'src/app/service/cinema.service';
 
 @Component({
   selector: 'app-payment-form',
@@ -7,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class PaymentFormComponent {
 
+  constructor( private cinemaService : CinemaService, private router : Router){}
+
+  cinema : Cinema | undefined
+
 tColorA = document.getElementById('tColorA');
 tColorB = document.getElementById('tColorB');
 tColorC = document.getElementById('tColorC');
@@ -14,6 +21,11 @@ iconA = document.querySelector('.fa-credit-card');
 iconB = document.querySelector('.fa-building- columns');
 iconC = document.querySelector('.fa-wallet');
 cDetails = document.querySelector('.card-details');
+
+validerPaiement(){
+  this.cinemaService.cinema = this.cinema
+  this.router.navigateByUrl("/accueil")
+}
 
 // doFun(){
 //     tColorA.style.color = "greenyellow";

@@ -16,7 +16,7 @@ export class ListeFilmComponent {
   films_a_l_affiche : Film[] = []
   films_a_voir_prochainement : Film[] = []
   dateDuJour: Date = new Date()
-  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' }
 
 
   ngOnInit() : void {
@@ -31,9 +31,9 @@ export class ListeFilmComponent {
 
         for (let i = 0; i < this.films.length; i++) {
           if (new Date(this.films[i].dateDeSortie) <= this.dateDuJour){
-          this.films_a_l_affiche.push(this.films[i]);
+          this.films_a_l_affiche.push(this.films[i])
           }else{
-            this.films_a_voir_prochainement.push(this.films[i]);
+            this.films_a_voir_prochainement.push(this.films[i])
             }
         }
       }
@@ -41,13 +41,13 @@ export class ListeFilmComponent {
   }
 
   allerVersProgs(film : Film){
-    this.filmService.film = film;
-    this.router.navigateByUrl("/prog");
+    this.filmService.film = film
+    this.router.navigateByUrl("/prog")
   }
 
   allerVersUnFilm(film : Film ){
-    this.filmService.film = film;
-    this.router.navigateByUrl("/unfilm");
+    this.filmService.film = film
+    this.router.navigateByUrl("/unfilm")
   }
 
 }
