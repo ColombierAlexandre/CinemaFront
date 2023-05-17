@@ -64,7 +64,7 @@ body{
 }
 
 .container-image{
-    height: 50%;
+    height: 90%;
     width: 100%;
     text-align: center;
     /* background-image: url("src/assets/images/Mario_movie.avif"); */
@@ -81,7 +81,7 @@ body{
 }
 
 .container-description{
-    height: 50%;
+    height: 10%;
     width: 100%;
     text-align: center;
     background-color: rgb(33, 33, 33);
@@ -110,3 +110,4 @@ button:hover{
 .container-filmsProchainement{
     margin-top: 10px;
 }
+

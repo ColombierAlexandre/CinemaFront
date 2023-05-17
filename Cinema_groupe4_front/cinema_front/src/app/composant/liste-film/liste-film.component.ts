@@ -26,8 +26,6 @@ export class ListeFilmComponent {
   cinema : Cinema | any
   utilisateur : Utilisateur | any
 
-  const searchBar = document.querySelector("#searchBar")
-
 
   ngOnInit() : void {
     this.getListeFilms()
