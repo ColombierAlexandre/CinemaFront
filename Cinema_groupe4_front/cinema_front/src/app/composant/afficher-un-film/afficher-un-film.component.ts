@@ -10,45 +10,32 @@ import { FilmService } from 'src/app/service/film.service';
 })
 export class AfficherUnFilmComponent implements OnInit{
 
+  listeFilm : Film[] = [];
+  film : Film |any;
   films : Film[] =[];
-
-  filmListe : Film[][] = [];
-
-  tailleSousListe : number = 3;
+  dateDuJour: Date = new Date()
+  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
   constructor(private filmService : FilmService, private router : Router){}
 
   ngOnInit() : void {
-    this.getListeFilm();
-    
-  }
-
-  cutList(listeFilm : Film[]){
-    for (let i = 0; i < listeFilm.length; i += this.tailleSousListe) {
-      var sousListe = listeFilm.slice(i, i + this.tailleSousListe);
-      this.filmListe.push(sousListe);
-    }
-  }
-
-  getListeFilm(){
-    this.filmService.getAllFilmBo().subscribe({
-      next : (dataFilm)=>{this.films = dataFilm},
-      error : (erreur)=>{console.log(erreur)},
-      complete : ()=>{
-        for (let i = 0; i < this.films.length; i += this.tailleSousListe) {
-          var sousListe = this.films.slice(i, i + this.tailleSousListe);
-          this.filmListe.push(sousListe);
-        }
-      }
-    })
+    this.films = this.filmService.listeFilm;
+    this.film = this.getFilmAlAffiche(this.films);
   }
 
   afficherUnFilm(film : Film){
     this.filmService.film = film;
-    this.router.navigateByUrl("/afficherUnFilm")
+    this.router.navigateByUrl("/unfilm")
   }
-
-  image : string = "../assets/images/django.jpg"
-  affiche_front : string = "../assets/images/django.jpg"
-
+  
+  getFilmAlAffiche(films : Film[]) : Film{
+    for (let i = 0; i < films.length; i++) {
+      if (new Date(films[i].dateDeSortie) <= this.dateDuJour){
+        this.listeFilm.push(films[i]);
+      }
+    }
+     this.film = this.listeFilm[1];
+    return this.film;
+  }
+  
 }

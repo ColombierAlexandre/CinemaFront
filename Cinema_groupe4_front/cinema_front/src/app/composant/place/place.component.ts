@@ -21,9 +21,6 @@ export class PlaceComponent {
      const idPrg = +params['id'];
      this.AllPlacesForShow(idPrg);
     });
-    
-    
-    
   
   }
 
