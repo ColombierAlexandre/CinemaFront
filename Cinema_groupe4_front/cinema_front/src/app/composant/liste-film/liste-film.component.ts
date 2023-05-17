@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { Cinema } from 'src/app/model/cinema';
 import { Film } from 'src/app/model/film';
 import { Utilisateur } from 'src/app/model/utilisateur';
@@ -24,6 +25,8 @@ export class ListeFilmComponent {
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' }
   cinema : Cinema | any
   utilisateur : Utilisateur | any
+
+  const searchBar = document.querySelector("#searchBar")
 
 
   ngOnInit() : void {
@@ -62,5 +65,8 @@ export class ListeFilmComponent {
     this.utilisateurService.utilisateur = this.utilisateur
     this.router.navigateByUrl("/unfilm")
   }
+
+
+  
 
 }
