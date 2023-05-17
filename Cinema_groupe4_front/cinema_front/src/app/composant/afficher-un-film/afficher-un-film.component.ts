@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cinema } from 'src/app/model/cinema';
 import { Film } from 'src/app/model/film';
@@ -16,28 +16,23 @@ export class AfficherUnFilmComponent implements OnInit{
 
   utilisateur : Utilisateur | any;
   cinema : Cinema | any;
-  listeFilm : Film[] = [];
+  @Input() listeFilm : Film[] = [];
   film : Film | any;
-  films : Film[] = [];
-  dateDuJour: Date = new Date()
-  formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+  dateDuJour: Date = new Date();
 
   constructor(private filmService : FilmService, private utilisateurService : UtilisateurService, private cinemaService : CinemaService, private router : Router){}
 
   ngOnInit() : void {
-    this.films = this.filmService.listeFilm;
-    this.film = this.getFilmAlAffiche(this.films);
+    this.utilisateur = this.utilisateurService.utilisateur;
+    this.cinema = this.cinemaService.cinema;
+    this.film = this.listeFilm[1];
   }
 
-  getFilmAlAffiche(films : Film[]) : Film{
-    for (let i = 0; i < films.length; i++) {
-      if (new Date(films[i].dateDeSortie) <= this.dateDuJour){
-        this.listeFilm.push(films[i]);
-      }
-    }
-     this.film = this.listeFilm[1];
-    return this.film;
+  ngAfterViewInit(): void {
+    console.log("************************",this.film);
+    console.log("------------------------",this.listeFilm);
   }
+  
 
   afficherUnFilm(film : Film, cinema : Cinema, utilisateur : Utilisateur){
     this.utilisateurService.utilisateur = utilisateur;

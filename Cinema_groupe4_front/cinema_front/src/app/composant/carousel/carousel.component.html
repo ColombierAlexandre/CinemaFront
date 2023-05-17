@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="container-text">
                                     <h1>{{film.titre}}</h1>
-                                    <button class="container-button" (onclick)="afficherUnFilm(film)">Voir ce
+                                    <button class="container-button" (onclick)="afficherUnFilm(film,cinema,utilisateur)">Voir ce
                                         film</button>
                                     </div>
                                 </div>
@@ -64,13 +64,32 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<div *ngFor="let list of filmListe">
+<!-- <div *ngFor="let list of filmListe">
     <div *ngFor="let film of list">
         <div>
-            <h3>{{film | json}}</h3>
+            <p>{{film.visaExploitation}}</p>
+            <div><img src="{{film.afficheUrl}}" alt="" style="height: 150px;"></div>
+            <p>{{film.titre}}</p>
+            <p>{{film.dateDeSortie}}</p>
+            <p>{{film.realisateur}}</p>
+            <p>{{film.producteur}}</p>
         </div>
     </div>
     <hr>
 </div>
+
+<!-- <div *ngFor="let list of filmListe">
+    <div *ngFor="let film of list">
+        <div>
+            <p>{{film.visaExploitation}}</p>
+            <div><img src="{{film.afficheUrl}}" alt="" style="height: 150px;"></div>
+            <p>{{film.titre}}</p>
+            <p>{{film.dateDeSortie}}</p>
+            <p>{{film.realisateur}}</p>
+            <p>{{film.producteur}}</p>
+        </div>
+    </div>
+    <hr>
+</div> -->

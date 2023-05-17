@@ -16,27 +16,19 @@ export class CarouselComponent implements OnInit{
 
   utilisateur : Utilisateur | any;
   cinema : Cinema | any;
-  @Input() films : Film[] = [];
-  filmListe : Film[][] = [];
+  films : Film[] = [];
+  @Input() filmListe : Film[][] = [];
   tailleSousListe : number = 3;
 
   constructor(private filmService : FilmService, private utilisateurService : UtilisateurService, private cinemaService : CinemaService, private router : Router){}
 
   ngOnInit(){
-    this.getListeFilm();
+    this.utilisateur = this.utilisateurService.utilisateur;
+    this.cinema = this.cinemaService.cinema;
   }
 
-  getListeFilm(){
-    this.filmService.getAllFilmBo().subscribe({
-      next : (dataFilm)=>{this.films = dataFilm},
-      error : (erreur)=>{console.log(erreur)},
-      complete : ()=>{
-        for (let i = 0; i < this.films.length; i += this.tailleSousListe) {
-          var sousListe = this.films.slice(i, i + this.tailleSousListe);
-          this.filmListe.push(sousListe);
-        }
-      }
-    })
+  ngAfterViewInit(): void {
+    console.log("************************",this.filmListe);
   }
 
   afficherUnFilm(film : Film, cinema : Cinema, utilisateur : Utilisateur){
