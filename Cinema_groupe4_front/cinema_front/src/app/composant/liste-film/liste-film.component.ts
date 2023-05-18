@@ -19,10 +19,18 @@ export class ListeFilmComponent {
     private utilisateurService : UtilisateurService, private router : Router){}
 
   films : Film[] = []
+
   films_a_l_affiche : Film[] = []
   films_a_voir_prochainement : Film[] = []
+
+  tableau_films_a_l_affiche : Film[][] = [];
+  tableau_films_a_voir_prochainement : Film[][] = [];
+
   dateDuJour: Date = new Date()
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' }
+
+  tailleSousListe = 4
+   
   cinema : Cinema | any
   utilisateur : Utilisateur | any
 
@@ -44,7 +52,17 @@ export class ListeFilmComponent {
           this.films_a_l_affiche.push(this.films[i])
           }else{
             this.films_a_voir_prochainement.push(this.films[i])
-            }
+          }
+          
+          for (let i = 0; i < this.films_a_l_affiche.length; i += this.tailleSousListe) {
+            var sousListe = this.films_a_l_affiche.slice(i, i + this.tailleSousListe);
+            this.tableau_films_a_l_affiche.push(sousListe);
+          }
+          for (let i = 0; i < this.films_a_voir_prochainement.length; i += this.tailleSousListe) {
+            var sousListe = this.films_a_voir_prochainement.slice(i, i + this.tailleSousListe);
+            this.tableau_films_a_voir_prochainement.push(sousListe);
+          }
+          
         }
       }
     })

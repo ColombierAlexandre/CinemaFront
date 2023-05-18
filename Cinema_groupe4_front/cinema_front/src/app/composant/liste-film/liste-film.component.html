@@ -9,8 +9,8 @@
 
         <div class="container-listeDesFilms">
             
-            <div *ngFor="let film of films_a_l_affiche">
-                <div (click)="allerVersProgs(film)" class="container-affiche">
+            <div *ngFor="let liste_de_films of tableau_films_a_l_affiche">
+                <div *ngFor="let film of liste_de_films" (click)="allerVersProgs(film)" class="container-affiche">
                     <div class="container-image">
                         <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                     </div>
@@ -27,8 +27,8 @@
 
         <div class="container-listeDesFilms">
 
-            <div *ngFor="let film of films_a_voir_prochainement">
-                <div (click)="allerVersUnFilm(film)" class="container-affiche">
+            <div *ngFor="let liste_de_films of tableau_films_a_voir_prochainement">
+                <div *ngFor="let film of liste_de_films" (click)="allerVersUnFilm(film)" class="container-affiche">
                     <div class="container-image">
                         <img id="affiche_film" src="{{film.afficheUrl}}" alt="affiche mario">
                     </div>
