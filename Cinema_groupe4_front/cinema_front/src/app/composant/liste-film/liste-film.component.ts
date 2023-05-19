@@ -61,7 +61,11 @@ export class ListeFilmComponent {
           for (let i = 0; i < this.films_a_voir_prochainement.length; i += this.tailleSousListe) {
             var sousListe = this.films_a_voir_prochainement.slice(i, i + this.tailleSousListe);
             this.tableau_films_a_voir_prochainement.push(sousListe);
+            console.log(sousListe);
+            
           }
+          console.log(this.tableau_films_a_voir_prochainement);
+          
           
         }
       }

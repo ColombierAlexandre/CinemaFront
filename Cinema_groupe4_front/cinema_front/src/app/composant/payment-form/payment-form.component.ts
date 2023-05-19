@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cinema } from 'src/app/model/cinema';
+import { Place } from 'src/app/model/place';
 import { Utilisateur } from 'src/app/model/utilisateur';
 import { CinemaService } from 'src/app/service/cinema.service';
+import { PlaceService } from 'src/app/service/place.service';
 import { UtilisateurService } from 'src/app/service/utilisateur.service';
 
 @Component({
@@ -12,8 +14,10 @@ import { UtilisateurService } from 'src/app/service/utilisateur.service';
 })
 export class PaymentFormComponent {
 
-  constructor( private cinemaService : CinemaService, private utilisateurService : UtilisateurService, private router : Router){}
-
+  constructor(private placeService : PlaceService, private cinemaService : CinemaService, private utilisateurService : UtilisateurService, 
+  private router : Router){}
+  
+  place : Place | any
   cinema : Cinema | undefined
   utilisateur : Utilisateur | undefined
 
@@ -26,11 +30,20 @@ iconC = document.querySelector('.fa-wallet');
 cDetails = document.querySelector('.card-details');
 
 ngOnInit() : void {
+  this.place = this.placeService.place
   this.cinema = this.cinemaService.cinema
   this.utilisateur = this.utilisateurService.utilisateur
 }
 
 validerPaiement(){
+  try {
+    this.place.isUsed(true)
+    console.log(this.place.isUsed())
+    this.placeService.updatePlace(this.place)
+  } catch (error) {
+    
+  }
+
   this.cinemaService.cinema = this.cinema
   this.utilisateurService.utilisateur = this.utilisateur
   this.router.navigateByUrl("/accueil")

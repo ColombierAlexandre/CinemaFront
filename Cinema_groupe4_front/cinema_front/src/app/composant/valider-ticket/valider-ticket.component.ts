@@ -34,14 +34,7 @@ export class ValiderTicketComponent {
   }
 
   validerTicket(){
-    try {
-      this.place.isUsed(true)
-      console.log(this.place.isUsed())
-      this.placeService.updatePlace(this.place)
-    } catch (error) {
-      
-    }
-    
+    this.placeService.place = this.place
     this.cinemaService.cinema = this.cinema
     this.utilisateurService.utilisateur = this.utilisateur
     this.router.navigateByUrl("/payement")
