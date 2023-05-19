@@ -6,7 +6,7 @@
     width: 40%;
     margin-left: 25%;
     border-radius: 25px;
-    background-color: aqua;
+    background-color: lightgrey;
     margin-bottom: 10px;
 }
 
@@ -14,7 +14,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 80%;
-    background-color: yellowgreen;
+    background-color: lightgray;
     
     color: black;
     text-align: center;
