@@ -23,20 +23,20 @@
     </tbody>
 </table> -->
 
-<table>
-    <tbody>
+<table class="Gdiv">
+   
         <td *ngFor="let progra of prog" class="capsule">
-            <div class="petitecapsule">
+          
             <tr>{{progra.film.titre}}</tr>
             <tr>
-                <td>Salle</td>
-                <td>{{progra.salle.numero}}</td>  
+                <td>Salle {{progra.salle.numero}}</td>
+              
             </tr>
             <tr>{{progra.dateHeureProg}}</tr>
             <button  (click)="AllerVersReservation(progra)">Réserves tes places</button> 
-        </div>
+       
         </td>
 
-    </tbody>
+   
 </table>
 

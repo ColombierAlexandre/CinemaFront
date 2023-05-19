@@ -58,14 +58,27 @@ button{
 }
 
 .capsule{
-    margin : 10 px;
-    border-radius: 20px 20px 0 0;
+    background-color: beige;
+    border-radius: 20px 20px 20px 20px;
     border-width: 5px;
-    color: black;
+    text-align :justify;
+    margin : 10px;
+    
+
 
 }
 
-.petitcapsule{
-    margin : 10px;
-    border-radius: 20px;
+.BTN{
+    text-align: center;
+}
+
+.Gdiv{
+  
+    width : 50%;
+    height : 300px;
+    margin-left : 25%;
+    margin-top : 10%;
+    margin-bottom : 10%;
+    display : flex;
+    height : auto;
 }
