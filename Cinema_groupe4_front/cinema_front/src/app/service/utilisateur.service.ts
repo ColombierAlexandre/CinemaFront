@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UtilisateurService {
 
+  utilisateur : Utilisateur | any;
+
   private _url : string = 'http://localhost:9091/utilisateur_api';
   
   constructor(private httpClient : HttpClient) { }

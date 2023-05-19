@@ -11,6 +11,7 @@ import { Cinema } from '../model/cinema';
 })
 export class ProgrammationService {
 
+
   progra : Programmation | any;
 
   private _url : string = 'http://localhost:9091/programmation_api';
@@ -25,7 +26,9 @@ export class ProgrammationService {
     return this.httpClient.get<[Programmation]>(this._url + "/getAllByFilmCine/");
   }
 
- 
+  getProgById(id : number) : Observable<Programmation> {
+    return this.httpClient.get<Programmation>(this._url + "/" + id);
+  }
   
  
 
