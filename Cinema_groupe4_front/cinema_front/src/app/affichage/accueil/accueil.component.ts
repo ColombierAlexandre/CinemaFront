@@ -15,7 +15,7 @@ export class AccueilComponent implements OnInit{
   listeFilms_a_l_affiche : Film[][] = [];
   films_a_voir_prochainement : Film[] = [];
   listeFilms_a_voir_prochainement : Film[][] = [];
-  tailleSousListe : number = 3;
+  tailleSousListe : number = 4;
   dateDuJour: Date = new Date()
   formatOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
 

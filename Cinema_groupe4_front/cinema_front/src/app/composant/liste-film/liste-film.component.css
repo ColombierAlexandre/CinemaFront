@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
+/*--------------------------------------------------------------*/
 
 .search{
     margin-top: 10px;
@@ -30,8 +31,24 @@ body{
     position: absolute;
     margin-left: 370px;
 }
-
 /*--------------------------------------------------------------*/
+
+.container-films{
+    background-color: aliceblue;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.container-filmsDuMoment{
+    max-width: 1300px;
+    width: 80%;
+    margin-top: 10px;
+    background-color: blueviolet;
+}
+
+.container-filmsProchainement{
+    margin-top: 40px;
+}
 
 .container-listeDesFilms{
     background-color: aqua;
@@ -103,11 +120,5 @@ button:hover{
     color: rgb(88, 87, 87);
 }
 
-.container-filmsDuMoment{
-    margin-top: 10px;
-}
 
-.container-filmsProchainement{
-    margin-top: 10px;
-}
 
