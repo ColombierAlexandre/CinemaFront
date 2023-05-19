@@ -9,6 +9,7 @@ import { ListeProgrammationComponent } from './composant/liste-programmation/lis
 import { FormulaireConnexionComponent } from './composant/formulaire-connexion/formulaire-connexion.component';
 import { PayementFormComponent } from './composant/payement-form/payement-form.component';
 
+
 const routes: Routes = [
   {path : "accueil", component : PlaceComponent},
   {path : "cinemas", component : AfficherCinemaComponent},
