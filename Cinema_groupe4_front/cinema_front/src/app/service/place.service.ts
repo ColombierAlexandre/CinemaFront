@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class PlaceService {
 
-  private place : Place | undefined;
+  place : Place | undefined;
 
-  private _url : string = 'http://localhost:9091/place_api';
+  private _url : string = 'http://localhost:9091/placeBo_api';
 
   constructor(private httpClient : HttpClient) { }
 
@@ -25,7 +25,7 @@ export class PlaceService {
   }
 
   getAllPlaceForAShow(idProg : number) : Observable<Place[]>{
-    return this.httpClient.get<Place[]>(this._url + "/getAll");
+    return this.httpClient.get<Place[]>(this._url + "/allProg/" + idProg);
   }
 
 }

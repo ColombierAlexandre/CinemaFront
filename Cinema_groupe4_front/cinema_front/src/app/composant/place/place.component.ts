@@ -21,7 +21,7 @@ export class PlaceComponent {
 
   ngOnInit():void{
     this.programmation = this.progServ.progra;
-   this.AllPlacesForShow(this.programmation.id);
+   this.AllPlacesForShow(this.programmation.idProg);
   }
 
   AllPlacesForShow (programmationId : number){

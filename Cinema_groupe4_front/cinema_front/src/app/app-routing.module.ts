@@ -6,11 +6,13 @@ import { AfficherCinemaComponent } from './composant/afficher-cinema/afficher-ci
 import { ListeFilmComponent } from './composant/liste-film/liste-film.component';
 import { PlaceComponent } from './composant/place/place.component';
 import { ValiderTicketComponent } from './composant/valider-ticket/valider-ticket.component';
+import { ListeProgrammationComponent } from './composant/liste-programmation/liste-programmation.component';
 
 const routes: Routes = [
   {path : "acceul", component : AfficherUnFilmComponent},
   {path : "cinemas", component : AfficherCinemaComponent},
   {path : "films", component : ListeFilmComponent},
+  {path : "prog", component : ListeProgrammationComponent},
   {path:"places",component:PlaceComponent},
   {path:"ticket",component:ValiderTicketComponent}
   
