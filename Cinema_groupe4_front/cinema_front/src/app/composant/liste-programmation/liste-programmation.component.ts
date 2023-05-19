@@ -86,6 +86,17 @@ export class ListeProgrammationComponent {
           })
     }
 
+    afficherDates(dateStr : Date) : string{
+      var date = new Date(dateStr);
+      var day = ("0" + date.getDate()).slice(-2);
+      var month = ("0" + (date.getMonth() + 1)).slice(-2);
+      var year = date.getFullYear();
+      var hours = ("0" + date.getHours()).slice(-2);
+      var minutes = ("0" + date.getMinutes()).slice(-2);
+      var formattedDate = day + "/" + month + "/" + year + " à " + hours + "h" + minutes;
+      return formattedDate
+  }
+
     AllerVersReservation(programmation : Programmation){
       this.progService.progra = programmation;
       this.newroute.navigateByUrl("/places");

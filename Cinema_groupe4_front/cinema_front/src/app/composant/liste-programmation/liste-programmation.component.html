@@ -32,8 +32,8 @@
                 <td>Salle {{progra.salle.numero}}</td>
               
             </tr>
-            <tr>{{progra.dateHeureProg}}</tr>
-            <button  (click)="AllerVersReservation(progra)">Réserves tes places</button> 
+            <tr>{{afficherDates(progra.dateHeureProg)}}</tr>
+            <button  (click)="AllerVersReservation(progra)" class="BTN">Réserves tes places</button> 
        
         </td>
 
