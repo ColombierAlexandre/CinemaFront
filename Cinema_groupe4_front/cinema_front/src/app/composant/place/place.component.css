@@ -1,0 +1,13 @@
+.btn{
+    
+    background-image: url("./fauteuilNonRéserve.png");
+}
+
+.Img{
+    height: 40px;
+    width: 40px;
+}
+
+.GD{
+    align-items: center;
+}

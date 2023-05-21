@@ -42,9 +42,9 @@ export class ListeProgrammationComponent {
     //  console.log("------------------------",this.listeFilm);
     }
 
-    getListeForProg(id : number){
+    getListeForProg(progra : Programmation){
       
-      this.placeService.getAllPlaceForAShow(id).subscribe({
+      this.placeService.getAllPlaceForAShow(progra).subscribe({
         next : (dataplaces)=>{ this.place = dataplaces},
         error : (erreur)=>{ console.log(erreur)},
         complete : ()=>{}
@@ -57,7 +57,7 @@ export class ListeProgrammationComponent {
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{
             this.prog.forEach((progra : Programmation) => {
-              this.placeService.getAllPlaceForAShow(progra.idProg).subscribe({
+              this.placeService.getAllPlaceForAShow(progra).subscribe({
                 next : (dataplaces)=>{ this.place = dataplaces},
                 error : (erreur)=>{ console.log(erreur)},
                 complete : ()=>{
@@ -74,7 +74,7 @@ export class ListeProgrammationComponent {
         error : (erreur)=>{ console.log(erreur)},
         complete : ()=>{
           this.prog.forEach((progra : Programmation) => {
-            this.placeService.getAllPlaceForAShow(progra.idProg).subscribe({
+            this.placeService.getAllPlaceForAShow(progra).subscribe({
               next : (dataplaces)=>{ this.place = dataplaces},
               error : (erreur)=>{ console.log(erreur)},
               complete : ()=>{

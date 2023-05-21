@@ -17,15 +17,15 @@ export class PlaceComponent {
   place : Place | any;
   programmation : Programmation | any;
 
-  constructor(private progServ : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
+  constructor(private progService : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
 
   ngOnInit():void{
-    this.programmation = this.progServ.progra;
-   this.AllPlacesForShow(this.programmation.idProg);
+    this.programmation = this.progService.progra;
+   this.AllPlacesForShow(this.programmation);
   }
 
-  AllPlacesForShow (programmationId : number){
-    this.placeService.getAllPlaceForAShow(programmationId).subscribe({
+  AllPlacesForShow (programmation : Programmation){
+    this.placeService.getAllPlaceForAShow(programmation).subscribe({
       next : (donneesPlace)=>{ this.places= donneesPlace},
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{}
