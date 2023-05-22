@@ -1,0 +1,14 @@
+.BouttonSiege{
+    display: flex;
+    flex-wrap: wrap;
+   background-image: url('/assets/images/fauteuilNonReserve.png'); 
+}
+
+.Img{
+    height: 40px;
+    width: 40px;
+}
+
+.GD{
+    align-items: center;
+}

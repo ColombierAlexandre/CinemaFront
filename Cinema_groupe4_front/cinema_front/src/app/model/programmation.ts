@@ -16,6 +16,7 @@ export class Programmation{
     }
 
     set places(value : Place[]) {
+        this.places = value;
     }
 
     get idProg() : number {

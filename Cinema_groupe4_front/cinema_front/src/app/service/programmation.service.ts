@@ -30,8 +30,5 @@ export class ProgrammationService {
     return this.httpClient.get<Programmation>(this._url + "/" + id);
   }
   
- 
-
   
-
 }

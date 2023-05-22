@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Place } from '../model/place';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Programmation } from '../model/programmation';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class PlaceService {
 
   private _url : string = 'http://localhost:9091/place_api';
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private router : Router) { }
 
  /* getAllPlaceForASalle(idSalle : number) : Observable<Place[]>{
     return this.httpClient.get<Place[]>(this._url + "/getAll");
@@ -24,8 +26,8 @@ export class PlaceService {
     return this.httpClient.get<Place>(this._url + "/" + id);
   }
 
-  getAllPlaceForAShow(idProg : number) : Observable<Place[]>{
-    return this.httpClient.get<Place[]>(this._url + "/getAll");
+  getAllPlaceForAShow(Prog : Programmation) : Observable<Place[]>{
+    return this.httpClient.post<[Place]>(this._url + "/getAllProgForShow", Prog);
   }
 
 }
