@@ -10,23 +10,26 @@ export class CinemaService {
 
   cinema : Cinema | any;
 
-  private _url : string = 'http://localhost:9091/cinemaBo_api';
+  private _url : string = 'http://localhost:9091/cinema_api';
 
   constructor(private httpClient : HttpClient) { }
 
-  getCinemaBoById(idCinema : string) : Observable<Cinema[]> {
-    return this.httpClient.get<Cinema[]>(this._url + "/" + idCinema);
+  getCinemaById(idCinema : string) : Observable<Cinema[]> {
+    return this.httpClient.get<Cinema[]>(this._url + "/getid/" + idCinema);
   }
 
-  getCinemaBoByName(name : string) : Observable<Cinema> {
-    return this.httpClient.get<Cinema>(this._url + "/" + name);
+  getCinemaByName(name : string) : Observable<Cinema> {
+    return this.httpClient.get<Cinema>(this._url + "/getnom/" + name);
   }
 
-  getAllCinemaBo() : Observable<Cinema[]> {
+  getCinemaBycodePostal(codePostal : number) : Observable<Cinema> {
+    return this.httpClient.get<Cinema>(this._url + "/getcodePostal/" + codePostal);
+  }
+
+  getAllCinema() : Observable<Cinema[]> {
     return this.httpClient.get<Cinema[]>(this._url);
   }
-  
-  getAllCinemaBoByVille(ville : string) : Observable<Cinema[]> {
-    return this.httpClient.get<Cinema[]>(this._url + "/allCineBoVille/" + ville);
+  getAllCinemaByVille(ville : string) : Observable<Cinema[]> {
+    return this.httpClient.get<Cinema[]>(this._url + "/getville/" + ville);
   }
 }
