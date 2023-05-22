@@ -27,7 +27,7 @@ export class PlaceService {
   }
 
   getAllPlaceForAShow(Prog : Programmation) : Observable<Place[]>{
-    return this.httpClient.get<[Place]>(this._url + "/getAllProgForShow/");
+    return this.httpClient.post<[Place]>(this._url + "/getAllProgForShow", Prog);
   }
 
 }

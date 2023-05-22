@@ -1,6 +1,5 @@
 .btn{
-    
-    background-image: url("./fauteuilNonRéserve.png");
+   background-image: url('/assets/images/fauteuilNonRéserve.png'); 
 }
 
 .Img{

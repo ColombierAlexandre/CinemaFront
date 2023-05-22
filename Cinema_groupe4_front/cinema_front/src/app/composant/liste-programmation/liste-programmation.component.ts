@@ -17,7 +17,7 @@ import { PlaceService } from 'src/app/service/place.service';
   styleUrls: ['./liste-programmation.component.css']
 })
 export class ListeProgrammationComponent {
-    prog : Programmation[] = [];
+   public prog : Programmation[] = [];
     film : Film | any;
     cinema : Cinema | any;
 
@@ -57,13 +57,13 @@ export class ListeProgrammationComponent {
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{
             this.prog.forEach((progra : Programmation) => {
-              this.placeService.getAllPlaceForAShow(progra).subscribe({
-                next : (dataplaces)=>{ this.place = dataplaces},
-                error : (erreur)=>{ console.log(erreur)},
-                complete : ()=>{
-                  progra.places = this.place;
-                }
-              }); 
+            //  this.placeService.getAllPlaceForAShow(progra).subscribe({
+                // next : (dataplaces)=>{ this.place = dataplaces},
+                // error : (erreur)=>{ console.log(erreur)},
+                // complete : ()=>{
+                //   progra.places = this.place;
+                // }
+            //  }); 
             });
           }
         });
@@ -74,14 +74,14 @@ export class ListeProgrammationComponent {
         error : (erreur)=>{ console.log(erreur)},
         complete : ()=>{
           this.prog.forEach((progra : Programmation) => {
-            this.placeService.getAllPlaceForAShow(progra).subscribe({
-              next : (dataplaces)=>{ this.place = dataplaces},
-              error : (erreur)=>{ console.log(erreur)},
-              complete : ()=>{
-                progra.places = this.place;
-              }
-            }); 
-          });
+          //   this.placeService.getAllPlaceForAShow(progra).subscribe({
+          //     next : (dataplaces)=>{ this.place = dataplaces},
+          //     error : (erreur)=>{ console.log(erreur)},
+          //     complete : ()=>{
+          //       progra.places = this.place;
+          //     }
+          //   }); 
+           });
         }
           })
     }
@@ -99,6 +99,8 @@ export class ListeProgrammationComponent {
 
     AllerVersReservation(programmation : Programmation){
       this.progService.progra = programmation;
+      console.log( "****** PROGRAMATION *******",programmation);
+      
       this.newroute.navigateByUrl("/places");
     }
 

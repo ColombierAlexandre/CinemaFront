@@ -1,33 +1,21 @@
 
-<table>
-    
-        <tr *ngFor="let place of places">
-            <td>{{place.idPlace}}</td>
-            <td>{{place.numPlace}}</td>
-            <td>{{place.isUsed}}</td>
-            <td>
-                <button  (click)="AllerVersTicket(place)"></button>
-            </td>
-        </tr>
-   
-</table>
 
 
 <div class="GD">
 <table>
-    <tr *ngFor="let i of [1,2,3,4]">
-        <td *ngFor="let j of [1,2,3,4,5,6,7,8,9,10]">
+    <tr *ngFor="let place of places">
+        
        <!--<ng-container *ngIf="!place.isUsed; else imageTemplate">-->
             <td>
-                <button (click)="AllerVersTicket(place)" class="btn"></button>
+                <button (click)="AllerVersTicket(place)" class="btn">Butn</button>
             </td>
  <!--       </ng-container>
         <ng-template #imageTemplate>
             <td>
                 <img src="CinemaFront\Cinema_groupe4_front\cinema_front\src\assets\images\fauteuilReserve.png" class="Img">
             </td>
-        </ng-template> 
-    </td> -->
+        </ng-template> -->
+    
     </tr>
 </table>
 </div>

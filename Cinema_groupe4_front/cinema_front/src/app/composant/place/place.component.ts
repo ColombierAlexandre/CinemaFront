@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { PlaceService } from 'src/app/service/place.service';
 import { Place } from 'src/app/model/place';
 import { Router } from '@angular/router';
@@ -12,21 +12,32 @@ import { Observable } from 'rxjs';
   templateUrl: './place.component.html',
   styleUrls: ['./place.component.css']
 })
-export class PlaceComponent {
+export class PlaceComponent implements AfterViewInit {
   places : Place[] = [];
   place : Place | any;
   programmation : Programmation | any;
 
-  constructor(private progService : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){};
+  constructor(private progService : ProgrammationService, private placeService : PlaceService, private router : ActivatedRoute, private newroute : Router){}
+  
+  
+  
+  
+  
+  ngAfterViewInit(): void {
+    this.AllPlacesForShow(this.programmation);
+  }
+;
 
   ngOnInit():void{
     this.programmation = this.progService.progra;
-   this.AllPlacesForShow(this.programmation);
+    console.log("******* prog service",this.programmation);
+    
+  
   }
 
   AllPlacesForShow (programmation : Programmation){
     this.placeService.getAllPlaceForAShow(programmation).subscribe({
-      next : (donneesPlace)=>{ this.places= donneesPlace},
+      next : (donneesPlace)=>{ this.places = donneesPlace},
           error : (erreur)=>{ console.log(erreur)},
           complete : ()=>{}
     })
