@@ -1,12 +1,40 @@
-<div *ngFor="let cinema of cinemas">
+
+
+<div class="barre-recherche">
+    <input type="search" id="search" value="" [(ngModel)]="recherche">
+    <input type="button" id="button" (click)="recherchercinemaliste()" value="Rechercher un cinema">
+</div>
+    
+
+  
+<div  class="containers" #myDiv0>  
+  <div *ngFor="let cinema of cinemarecherche">
     <ul >
-        <li>{{cinema.idCinema}}</li>
-        <li>{{cinema.nom}}</li>
-        <li>{{cinema.telephone}}</li>
-        <li>{{cinema.mail}}</li>
-        <li>{{cinema.rue}}</li>
-        <li>{{cinema.ville}}</li>
-        <li>{{cinema.codePostal}}</li>
+      <h1>{{cinema.ville}}</h1>
+      <p>{{cinema.nom}}<p>
+        <p>{{cinema.rue}}<p>
+        <p>{{cinema.codePostal}}<p>
+        <p>{{cinema.mail}}<p>
+        <p>{{cinema.telephone}}<p>
         <hr>
     </ul>
-</div>
+  </div>
+  
+
+
+  <div *ngIf="cinemarecherche.length == 0"  class="containers" #myDiv>
+    <div *ngFor="let cinema of cinemas">
+      <ul (click)="selectionnerCinema(cinema)">
+        <h1>{{cinema.ville}}</h1>
+        <p>{{cinema.nom}}<p>
+          <p>{{cinema.rue}}<p>
+          <p>{{cinema.codePostal}}<p>
+          <p>{{cinema.mail}}<p>
+          <p>{{cinema.telephone}}<p>
+          <hr>
+      </ul>
+    </div>
+
+    
+  </div>
+  
