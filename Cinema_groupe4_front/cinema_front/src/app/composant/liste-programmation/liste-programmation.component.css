@@ -81,4 +81,5 @@ button{
     margin-bottom : 10%;
     display : flex;
     height : auto;
+    background-color: grey;
 }

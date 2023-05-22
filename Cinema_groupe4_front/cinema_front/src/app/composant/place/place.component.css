@@ -1,5 +1,7 @@
-.btn{
-   background-image: url('/assets/images/fauteuilNonRéserve.png'); 
+.BouttonSiege{
+    display: flex;
+    flex-wrap: wrap;
+   background-image: url('/assets/images/fauteuilNonReserve.png'); 
 }
 
 .Img{
