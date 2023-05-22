@@ -8,10 +8,11 @@ import { ValiderTicketComponent } from './composant/valider-ticket/valider-ticke
 import { ListeProgrammationComponent } from './composant/liste-programmation/liste-programmation.component';
 import { FormulaireConnexionComponent } from './composant/formulaire-connexion/formulaire-connexion.component';
 import { PayementFormComponent } from './composant/payement-form/payement-form.component';
+import { CarouselComponent } from './composant/carousel/carousel.component';
 
 
 const routes: Routes = [
-  {path : "accueil", component : PlaceComponent},
+  {path : "accueil", component : CarouselComponent},
   {path : "cinemas", component : AfficherCinemaComponent},
   {path : "listeFilms", component : ListeFilmComponent},
   {path : "places",component:PlaceComponent},

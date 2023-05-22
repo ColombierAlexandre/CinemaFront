@@ -17,89 +17,91 @@ import { PlaceService } from 'src/app/service/place.service';
   styleUrls: ['./liste-programmation.component.css']
 })
 export class ListeProgrammationComponent {
-    prog : Programmation[] = [];
-    film : Film | any;
-    cinema : Cinema | any;
+  public prog : Programmation[] = [];
+  film : Film | any;
+  cinema : Cinema | any;
 
-    place : Place[] = [];
+  place : Place[] = [];
+  
+
+
+  constructor(private cinemaService : CinemaService, private filmService : FilmService, private progService : ProgrammationService, private newroute : Router,private placeService : PlaceService){}
+
+  ngOnInit():void{
+
+  //  this.film = this.filmService.film;
+  //  this.cinema = this.cinemaService.cinema;
+    this.getListeProgrammations();
     
 
+  }
 
-    constructor(private cinemaService : CinemaService, private filmService : FilmService, private progService : ProgrammationService, private newroute : Router,private placeService : PlaceService){}
+  ngAfterViewInit(): void {
+    console.log("************************",this.prog);
+  //  console.log("------------------------",this.listeFilm);
+    // this.getListeProgrammationsByFilmAndCinema(this.film,this.cinema);
+  }
 
-    ngOnInit():void{
+  getListeForProg(progra : Programmation){
+    
+    this.placeService.getAllPlaceForAShow(progra).subscribe({
+      next : (dataplaces)=>{ this.place = dataplaces},
+      error : (erreur)=>{ console.log(erreur)},
+      complete : ()=>{}
+    })
+  }
 
-     // this.film = this.filmService.film;
-     // this.cinema = this.cinemaService.cinema;
-    //  this.filmService.getFilmBoById(this.film.filmId);
-      this.getListeProgrammations();
-      // this.getListeProgrammationsByFilmAndCinema(this.film,this.cinema);
-
-    }
-
-    ngAfterViewInit(): void {
-      console.log("************************",this.prog);
-    //  console.log("------------------------",this.listeFilm);
-    }
-
-    getListeForProg(id : number){
-      
-      this.placeService.getAllPlaceForAShow(id).subscribe({
-        next : (dataplaces)=>{ this.place = dataplaces},
-        error : (erreur)=>{ console.log(erreur)},
-        complete : ()=>{}
-      })
-    }
-
-    getListeProgrammationsByFilmAndCinema(film : Film, cinema : Cinema){
-        this.progService.getProgByFilmAndCinema(film, cinema).subscribe({
-          next : (donneesProg)=>{ this.prog = donneesProg},
-          error : (erreur)=>{ console.log(erreur)},
-          complete : ()=>{
-            this.prog.forEach((progra : Programmation) => {
-              this.placeService.getAllPlaceForAShow(progra.idProg).subscribe({
-                next : (dataplaces)=>{ this.place = dataplaces},
-                error : (erreur)=>{ console.log(erreur)},
-                complete : ()=>{
-                  progra.places = this.place;
-                }
-              }); 
-            });
-          }
-        });
-    }
-    getListeProgrammations(){
-      this.progService.getAllProg().subscribe({
+  getListeProgrammationsByFilmAndCinema(film : Film, cinema : Cinema){
+      this.progService.getProgByFilmAndCinema(film, cinema).subscribe({
         next : (donneesProg)=>{ this.prog = donneesProg},
         error : (erreur)=>{ console.log(erreur)},
         complete : ()=>{
           this.prog.forEach((progra : Programmation) => {
-            this.placeService.getAllPlaceForAShow(progra.idProg).subscribe({
-              next : (dataplaces)=>{ this.place = dataplaces},
-              error : (erreur)=>{ console.log(erreur)},
-              complete : ()=>{
-                progra.places = this.place;
-              }
-            }); 
+          //  this.placeService.getAllPlaceForAShow(progra).subscribe({
+              // next : (dataplaces)=>{ this.place = dataplaces},
+              // error : (erreur)=>{ console.log(erreur)},
+              // complete : ()=>{
+              //   progra.places = this.place;
+              // }
+          //  }); 
           });
         }
-          })
-    }
-
-    afficherDates(dateStr : Date) : string{
-      var date = new Date(dateStr);
-      var day = ("0" + date.getDate()).slice(-2);
-      var month = ("0" + (date.getMonth() + 1)).slice(-2);
-      var year = date.getFullYear();
-      var hours = ("0" + date.getHours()).slice(-2);
-      var minutes = ("0" + date.getMinutes()).slice(-2);
-      var formattedDate = day + "/" + month + "/" + year + " à " + hours + "h" + minutes;
-      return formattedDate
+      });
+  }
+  getListeProgrammations(){
+    this.progService.getAllProg().subscribe({
+      next : (donneesProg)=>{ this.prog = donneesProg},
+      error : (erreur)=>{ console.log(erreur)},
+      complete : ()=>{
+        this.prog.forEach((progra : Programmation) => {
+        //   this.placeService.getAllPlaceForAShow(progra).subscribe({
+        //     next : (dataplaces)=>{ this.place = dataplaces},
+        //     error : (erreur)=>{ console.log(erreur)},
+        //     complete : ()=>{
+        //       progra.places = this.place;
+        //     }
+        //   }); 
+         });
+      }
+        })
   }
 
-    AllerVersReservation(programmation : Programmation){
-      this.progService.progra = programmation;
-      this.newroute.navigateByUrl("/places");
-    }
+  afficherDates(dateStr : Date) : string{
+    var date = new Date(dateStr);
+    var day = ("0" + date.getDate()).slice(-2);
+    var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    var year = date.getFullYear();
+    var hours = ("0" + date.getHours()).slice(-2);
+    var minutes = ("0" + date.getMinutes()).slice(-2);
+    var formattedDate = day + "/" + month + "/" + year + " à " + hours + "h" + minutes;
+    return formattedDate
+}
+
+  AllerVersReservation(programmation : Programmation){
+    this.progService.progra = programmation;
+    console.log( "****** PROGRAMATION *******",programmation);
+    
+    this.newroute.navigateByUrl("/places");
+  }
 
 }

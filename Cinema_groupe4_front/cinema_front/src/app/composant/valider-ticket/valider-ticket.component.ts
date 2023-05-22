@@ -30,7 +30,7 @@ export class ValiderTicketComponent {
     this.place = this.placeService.place
     this.cinema = this.cinemaService.cinema
     this.utilisateur = this.utilisateurService.utilisateur
-    this.prog = this.progService.getProgById(this.place.programmationId())
+    this.prog = this.progService.progra
   }
 
   validerTicket(){

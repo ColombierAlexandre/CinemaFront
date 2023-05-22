@@ -25,18 +25,17 @@
 
 <table class="Gdiv">
    
-        <td *ngFor="let progra of prog" class="capsule">
+    <td *ngFor="let progra of prog" class="capsule">
+      
+        <tr>{{progra.film.titre}}</tr>
+        <tr>
+            <td>Salle {{progra.salle.numero}}</td>
           
-            <tr>{{progra.film.titre}}</tr>
-            <tr>
-                <td>Salle {{progra.salle.numero}}</td>
-              
-            </tr>
-            <tr>{{afficherDates(progra.dateHeureProg)}}</tr>
-            <button  (click)="AllerVersReservation(progra)" class="BTN">Réserves tes places</button> 
-       
-        </td>
-
+        </tr>
+        <tr>{{afficherDates(progra.dateHeureProg)}}</tr>
+        <button  (click)="AllerVersReservation(progra)" class="BTN">Réserves tes places</button> 
    
-</table>
+    </td>
 
+
+</table>
